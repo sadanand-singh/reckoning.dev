@@ -1,0 +1,54 @@
+.sr-only {
+    @include sr-only();
+}
+
+.sr-only-focusable {
+    @include sr-only-focusable();
+}
+
+.sr-skip-link {
+    @include sr-only();
+    @include sr-only-focusable();
+
+    &:focus {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        font-size: 1rem;
+        transform: translateX(-50%);
+        background-color: var(--color-text);
+        color: var(--color-bg);
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+.u-align-center {
+    text-align: center !important;
+}
+.u-align-right {
+    text-align: right !important;
+}
+.u-align-middle {
+    display: inline-flex;
+    align-items: center;
+}
+
+.u-mb1 {
+    margin-bottom: 1rem !important;
+}
+.u-mb2 {
+    margin-bottom: 2rem !important;
+}
+.u-mb4 {
+    margin-bottom: 4rem !important;
+}
+.u-mt2 {
+    margin-top: 2rem !important;
+}
+.u-mr2 {
+    margin-right: 2rem !important;
+}
+.u-ml2 {
+    margin-left: 2rem !important;
+}

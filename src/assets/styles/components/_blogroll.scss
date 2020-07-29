@@ -1,0 +1,50 @@
+.blogroll {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 2rem;
+    margin: 0 -1.5rem;
+
+    &__item {
+        position: relative;
+        padding: 1.5rem;
+        border-radius: 0.25rem;
+        background-color: var(--color-bg);
+
+        &::after {
+            @include coverall;
+            content: '';
+            border-radius: 0.25rem;
+            box-shadow: 14px 14px 70px -10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        &:hover {
+            z-index: 1;
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    &__profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    &__title {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+    }
+    &__link {
+        display: block;
+        @include truncate;
+        @include stretched-link;
+    }
+    &__avatar {
+        flex: none;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+}

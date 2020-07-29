@@ -1,0 +1,43 @@
+<nav class="nav js-nav" role="navigation" aria-label="site" tabindex="-1">
+
+    {# Menu Toggle Button #}
+    <button
+        class="iconbtn nav__togglebtn js-nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="toggle menu"
+    >
+        <span class="menuicon">
+            <span class="menuicon__bar"></span>
+            <span class="menuicon__bar"></span>
+            <span class="menuicon__bar"></span>
+            <span class="menuicon__bar"></span>
+        </span>
+    </button>
+
+    {# Nav Links  #}
+    <div class="nav__content">
+        <ul class="nav__menu js-nav-menu" id="nav-menu">
+        {%- for nav in collections.nav -%}
+            {%- set isCurrent = (nav.url == page.url) -%}
+            {%- set isParent = nav.url != '/' and page.url and nav.url in page.url -%}
+		    <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                <a
+                    href="{% if isCurrent %}#main{% else %}{{ nav.url | url }}{% endif %}"
+                    class="nav__link"
+                    {% if isCurrent %}aria-current="page"{% endif %}
+                >
+                    <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span>
+                    {{ nav.data.navtitle }}
+                </a>
+            </li>
+        {%- endfor -%}
+        </ul>
+    </div>
+    
+    {# Menu BG Animation #}
+    <div class="nav__bg">
+        <div class="nav__bg__circle"></div>
+    </div>
+
+</nav>

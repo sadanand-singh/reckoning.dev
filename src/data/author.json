@@ -1,0 +1,27 @@
+{
+    "name": "Max Böck",
+    "email": "hello@mxb.dev",
+    "avatar": "/assets/images/avatar2.jpg",
+    "social": {
+        "twitter": {
+            "name": "mxbck",
+            "url": "https://twitter.com/mxbck"
+        },
+        "github": {
+            "name": "maxboeck",
+            "url": "https://github.com/maxboeck"
+        },
+        "codepen": {
+            "name": "mxbck",
+            "url": "https://codepen.io/mxbck/"
+        },
+        "notist": {
+            "name": "mxb",
+            "url": "https://noti.st/mxb"
+        },
+        "keybase": {
+            "name": "mxb",
+            "url": "https://keybase.io/mxb"
+        }
+    }
+}

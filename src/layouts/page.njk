@@ -1,0 +1,14 @@
+---
+layout: base
+---
+<article class="page">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+        {% if subtitle %}
+            <p class="page__subtitle">{{ subtitle | safe }}</p>
+        {% endif %}
+    </header>
+    <div class="page__content markdown">
+        {{ content | safe }}
+    </div>
+</article>

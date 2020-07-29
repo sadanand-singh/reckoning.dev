@@ -1,0 +1,63 @@
+{
+  "name": "mxb.dev",
+  "version": "4.1.0",
+  "description": "Personal Website of Max Böck",
+  "scripts": {
+    "start": "gulp build:dev",
+    "build": "NODE_ENV=production gulp build && yarn run build:lambda",
+    "debug": "DEBUG=Eleventy* yarn start",
+    "serve": "gulp serve",
+    "serve:lambda": "netlify-lambda serve _lambda",
+    "build:lambda": "netlify-lambda build _lambda"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/maxboeck/mxb"
+  },
+  "author": "Max Böck",
+  "license": "MIT",
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "dompurify": "^2.0.7",
+    "focus-trap": "^5.1.0",
+    "focus-visible": "^5.0.2",
+    "infinite-scroll": "^3.0.5",
+    "leaflet": "^1.5.1",
+    "lodash": "^4.17.19",
+    "markdown-it-anchor": "^5.0.2",
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "browser-sync": "^2.26.3",
+    "critical": "^1.3.4",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "encoding": "^0.1.12",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
+    "html-entities": "^1.2.1",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.8.2",
+    "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.3.0",
+    "require-dir": "^1.2.0",
+    "sanitize-html": "^1.20.0",
+    "twitter": "^1.7.1",
+    "webpack-stream": "^4.0.3",
+    "workbox-build": "^4.3.1"
+  }
+}

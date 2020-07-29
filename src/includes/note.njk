@@ -1,0 +1,73 @@
+{%- set isDetailView = layout == 'note' -%}
+
+{% if isDetailView %}
+    {%- set note = page -%}
+{% else %}
+    {%- set tags = note.data.tags -%}
+{% endif %}
+
+{%- set webmentionUrl -%}{{ note.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set mentionCount = webmentions.children | webmentionCountByType(webmentionUrl, "in-reply-to", "mention-of") -%}
+{%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
+{%- set repostCount = webmentions.children | webmentionCountByType(webmentionUrl, "repost-of") -%}
+
+<div class="note {% if isDetailView %}note--detail{% endif %} h-entry">
+    <div class="note__main">
+        <div class="note__meta">
+            <p class="note__author h-card p-author" rel="author" hidden>
+                <span class="note__author__link">
+                    <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
+                    <strong class="note__author__name p-name">{{ author.name }}</strong>
+                </span>
+            </p>
+            <time class="note__date dt-published" datetime="{{ note.date | iso }}">
+                {{ note.date | readableDate('dd LLL yyyy') }}
+            </time>
+            {% if tags %}
+            <div class="note__tags">
+                {% for tag in tags %}
+                    <span class="note__tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="note__content">
+            <div class="e-content p-name markdown">
+                {% if isDetailView %}
+                    {% if title %}<h1 class="note__title">{{ title }}</h1>{% endif %}
+                    {{ content | safe }}
+                {% else %}
+                    {% if note.data.title %}<h2 class="note__title">{{ note.data.title }}</h2>{% endif %}
+                    {{ note.templateContent | safe }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="note__footer">
+        <ul class="note__stats">
+            <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
+                {% icon "message", useInlineIcons %}{{ mentionCount }}
+            </li>
+            <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
+                {% icon "repost", useInlineIcons %}{{ repostCount }}
+            </li>
+            <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
+                {% icon "heart", useInlineIcons %}{{ likeCount }}
+            </li>
+        </ul>
+        {% if note.data.syndicate %}
+            <span class="note__syndication" title="syndicated to Twitter">
+                {% icon "twitter", useInlineIcons %}
+            </span>
+        {% endif %}
+    </div>
+    {% if isDetailView %}
+    <div class="note__webmentions">
+        {% include 'webmentions.njk' %}       
+    </div>
+    {% else %}
+    <a href="{{ note.url }}" class="note__link">
+        <span class="sr-only">View Note</span>
+    </a>
+    {% endif %}
+</div>

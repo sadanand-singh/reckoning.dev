@@ -1,0 +1,98 @@
+.signup {
+    position: relative;
+    max-width: 700px;
+    border-radius: 0.5rem;
+
+    .spinner {
+        display: none;
+    }
+
+    @include mq(md) {
+        font-size: 1.125rem;
+    }
+
+    &__front,
+    &__back {
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 2px solid var(--color-border);
+        background-color: var(--color-bg-offset);
+    }
+
+    &__front {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__back {
+        @include coverall;
+        visibility: hidden;
+        z-index: 0;
+
+        @include mq(md) {
+            padding-right: calc(40% + 2rem);
+
+            &::after {
+                @include coverall;
+                content: '';
+                display: block;
+                border-radius: 0 0.5rem 0.5rem 0;
+                overflow: hidden;
+                left: 60%;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+    &__desc {
+        margin-bottom: 2rem;
+
+        > * + * {
+            margin-top: 1rem;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 1.25rem;
+        left: -1.5rem;
+        font-size: 2rem;
+        z-index: 2;
+        color: $state-success;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.2s $animation-curve-default;
+    }
+}
+
+.signup--loading {
+    .spinner {
+        display: inline-block;
+    }
+}
+
+.signup--success {
+    .signup__front {
+        visibility: hidden;
+        z-index: 0;
+    }
+    .signup__back {
+        visibility: visible;
+        z-index: 1;
+    }
+    .signup__icon {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    @include mq(md) {
+        .signup__back::after {
+            @include invert-on-dark();
+            background: #fff url('/assets/images/confetti.gif') no-repeat 0 0;
+        }
+    }
+}

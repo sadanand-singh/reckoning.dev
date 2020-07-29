@@ -1,0 +1,119 @@
+.webmention {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem 0 1rem 60px;
+
+    &--own {
+        background-color: var(--color-bg-offset);
+        border-radius: 0.5rem;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        order: -1;
+        font-size: 0.875rem;
+
+        &__divider {
+            display: inline-block;
+            padding: 0 0.25rem;
+        }
+    }
+    &__content {
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    &__author {
+        font-size: 1rem;
+        color: inherit;
+
+        &__photo {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    &__pubdate {
+        color: var(--color-text-offset);
+    }
+
+    a.u-mention,
+    a:empty {
+        display: none;
+    }
+}
+
+// WM Section
+.webmentions {
+    &__metric,
+    &__info {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            display: block;
+            margin-right: 0.1875em;
+        }
+    }
+    &__metric {
+        margin-right: 1.5rem;
+    }
+    &__info {
+        color: var(--color-text-offset);
+
+        @include hover-focus {
+            color: var(--color-text);
+        }
+    }
+    &__content {
+        display: none;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    &__faces {
+        display: flex;
+        flex: 1 0 auto;
+        flex-wrap: wrap;
+        padding: 0.5rem 0;
+        margin-right: 1.5rem;
+
+        &__img,
+        &__more {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            flex: none;
+        }
+        &__more {
+            font-size: 0.75rem;
+            line-height: 2rem;
+            text-align: center;
+            background-color: var(--color-bg-offset);
+        }
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+// Expand when targeted
+#webmentions:target,
+.webmentions--expanded {
+    .webmentions__content {
+        display: block;
+    }
+}

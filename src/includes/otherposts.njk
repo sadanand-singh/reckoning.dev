@@ -1,0 +1,14 @@
+{% set otherposts = collections.posts | excludePost(page) | slice(-10) %}
+
+<ol class="otherposts">
+    {% for post in otherposts | reverse %}
+        <li class="otherposts__item">
+            <a href="{{ post.url | url }}" class="otherposts__link {% if post.data.draft %}otherposts__link--draft{% endif %}">
+                <span class="otherposts__title">{{ post.data.title }}</span>
+                <time class="otherposts__date" datetime="{{ post.date | iso }}" aria-label=", written {{ post.date | readableDate('dd LLL yyyy') }}">
+                    {{ post.date | readableDate('dd LLL yyyy') }}
+                </time>
+            </a>
+        </li>
+    {% endfor %}
+</ol>

@@ -1,0 +1,273 @@
+.nav {
+    display: flex;
+    align-items: center;
+
+    // Nav Menu UL
+    &__menu {
+        display: flex;
+    }
+
+    // Nav Item LI
+    &__item {
+        position: relative;
+
+        // Underline
+        &::after {
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: var(--color-border);
+            position: absolute;
+            left: 1.25rem;
+            right: 1.25rem;
+            bottom: -5px;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        // Hover Underline
+        &:hover::after {
+            transform: scaleX(1);
+        }
+
+        // Current Page Active Item
+        &--active {
+            &::after {
+                background-color: var(--color-primary) !important;
+                transform: none;
+            }
+            > a {
+                color: var(--color-text);
+            }
+        }
+    }
+
+    // Nav Link
+    &__link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        padding: 0.75rem 1.25rem;
+        line-height: 1;
+        white-space: nowrap;
+        text-transform: lowercase;
+        color: var(--color-text);
+        transition: color 0.2s linear;
+
+        @include hover-focus {
+            color: var(--color-text);
+        }
+    }
+
+    // Nav Item Number
+    &__num {
+        display: block;
+        margin-right: 0.375rem;
+        font-weight: 700;
+    }
+
+    // Toggle Button
+    &__togglebtn {
+        display: none;
+    }
+
+    // ==================================
+    // MOBILE VERSION (TABLET AND DOWN)
+    // ==================================
+
+    @include mq-down(lg) {
+        &__content {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+
+            position: fixed;
+            z-index: z('nav');
+            top: 0;
+            left: 0;
+        }
+
+        &__menu {
+            flex-direction: column;
+            justify-content: center;
+            flex: 1 0 auto;
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: opacity 0.5s linear 0.25s,
+                transform 0.5s $animation-curve-default 0.25s;
+        }
+
+        &__item {
+            padding: 0 15%;
+            font-family: var(--font-family-display);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            color: #fff;
+
+            &::after {
+                left: 0;
+                right: 70%;
+                height: 10px;
+                bottom: 15%;
+                background-color: var(--color-text-offset);
+            }
+        }
+
+        &__link {
+            padding: 1.5rem;
+            text-transform: none;
+            color: #fff !important;
+        }
+
+        &__num {
+            margin-right: 0.75rem;
+            font-family: $font-family-base;
+            font-weight: 300;
+            font-size: 0.5em;
+            color: var(--color-text-offset);
+        }
+
+        &__togglebtn {
+            display: flex;
+            position: relative;
+            z-index: z('nav') + 1;
+        }
+    }
+}
+
+// ==================================
+// NAV OPEN STATE (MOBILE ONLY)
+// ==================================
+
+.nav--open {
+    @include mq-down(lg) {
+        .nav__content {
+            display: flex;
+        }
+
+        .nav__menu--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav__togglebtn {
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .nav__bg {
+            visibility: visible;
+        }
+
+        .nav__bg__circle {
+            transform: scale(1);
+        }
+    }
+}
+
+// ==================================
+// NAV BACKGROUND ANIMATION
+// ==================================
+
+.nav__bg {
+    position: fixed;
+    z-index: z('nav') - 1;
+    top: 16px;
+    right: 5%;
+    height: 4px;
+    width: 4px;
+    transform: translateX(-22px) translateY(22px);
+    pointer-events: none;
+    visibility: hidden;
+
+    &__circle {
+        display: block;
+        width: 300vmax;
+        height: 300vmax;
+        width: calc(var(--diameter) * 2);
+        height: calc(var(--diameter) * 2);
+
+        position: absolute;
+        top: -150vmax;
+        left: -150vmax;
+        top: calc(var(--diameter) * -1);
+        left: calc(var(--diameter) * -1);
+
+        border-radius: 50%;
+        backface-visibility: hidden;
+        background-color: #000;
+
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: transform 0.4s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        will-change: transform;
+    }
+
+    @include mq(md) {
+        top: 50px;
+    }
+    @include mq(lg) {
+        display: none;
+    }
+}
+
+// ==================================
+// NAV MENU BUTTON ICON
+// ==================================
+
+.menuicon {
+    display: block;
+    width: 24px;
+    height: 16px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto;
+    transform: translate(0, -1px) rotate(0deg);
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &__bar {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: currentColor;
+        left: 0;
+        transform: rotate(0deg);
+        transition: transform 0.25s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 50%;
+        }
+        &:nth-child(4) {
+            top: 100%;
+        }
+    }
+
+    // Animate to "X" when Nav is open
+    .nav--open & {
+        transform: translate(-1px, 0) rotate(270deg);
+
+        .menuicon__bar {
+            &:nth-child(1),
+            &:nth-child(4) {
+                width: 0;
+                top: 50%;
+                left: 50%;
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

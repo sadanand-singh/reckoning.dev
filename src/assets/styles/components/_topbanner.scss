@@ -1,0 +1,14 @@
+.topbanner {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    @include mq(md) {
+        text-align: center;
+    }
+}

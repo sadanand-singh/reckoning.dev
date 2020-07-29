@@ -1,0 +1,51 @@
+.otherposts {
+    &__item:not(:last-child) {
+        margin-bottom: 0.25rem;
+    }
+
+    &__link {
+        display: block;
+        padding: 0.25rem 0;
+        font-size: 1.125rem;
+        color: inherit;
+
+        &--draft {
+            color: var(--color-secondary);
+
+            .otherposts__title::after {
+                content: '(Draft)';
+                padding-left: 0.25em;
+            }
+        }
+
+        @include mq(md) {
+            display: flex;
+            align-items: center;
+            font-size: 1.375rem;
+
+            &:hover .otherposts__title {
+                transform: translateX(10px);
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        transform: translateX(0);
+        transition: all 0.25s ease;
+    }
+
+    &__date {
+        display: block;
+        color: var(--color-text-offset);
+        font-size: 0.75em;
+        white-space: nowrap;
+
+        @include mq(md) {
+            padding-right: 1rem;
+            width: 7.25rem;
+            flex: 0 0 7.25rem;
+            order: -1;
+        }
+    }
+}

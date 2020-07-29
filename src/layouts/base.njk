@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!--!
+  Oh so you're an inspector?
+  View the source here: {{ site.repo }}
+-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
+        <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="{{ '/assets/css/theme.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+
+        {% include "meta.njk" %}
+        <script>(localStorage.getItem('theme')) && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
+    </head>
+    <body>
+        <a href="#main" class="sr-skip-link">skip to main content</a>
+
+        <div class="hfeed layout" role="document">
+            {% include "themepicker.njk" %}
+            {% include "topbanner.njk" %}
+            {% include "header.njk" %}
+
+            <main class="main container" role="main" id="main" tabindex="-1">
+                {{ content | safe }}
+            </main>
+
+            {% include "footer.njk" %}
+        </div>
+
+        {# Main JS Bundle #}
+        <script src="{{ '/assets/js/main.js' | url }}" defer></script>
+
+        {% if layout == 'post' or layout == 'note' %}
+            <script src="//platform.twitter.com/widgets.js" async defer></script>
+            <script src="{{ '/assets/js/webmentions.js' | url }}" defer></script>
+        {% endif %}
+
+    </body>
+</html>

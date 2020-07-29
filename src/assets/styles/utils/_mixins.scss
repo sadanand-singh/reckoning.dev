@@ -1,0 +1,123 @@
+//--------------------
+// SCSS MIXINS
+//--------------------
+
+@mixin mq($name) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin mq-down($name) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (max-width: ($min - 1px)) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+
+@mixin body-text() {
+    font-size: 1.125rem;
+    line-height: 1.65;
+
+    @include mq(md) {
+        font-size: 1.375rem;
+    }
+}
+
+@mixin hyphenate() {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+@mixin truncate() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin coverall() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin scrollable() {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin button-reset() {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+@mixin container-narrow() {
+    width: 100%;
+    max-width: $container-narrow-max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin stretched-link() {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+@mixin invert-on-dark() {
+    html[data-theme='dark'] &,
+    html[data-theme='turnpike'] &,
+    html[data-theme='bowser'] &,
+    html[data-theme='rainbow'] & {
+        filter: invert(1);
+    }
+}

@@ -1,0 +1,41 @@
+---
+layout: base
+tags: nav
+navtitle: Home
+navorder: 1
+permalink: index.html
+---
+
+<div class="hero fade-in">
+    <div class="hero__inner">
+        <h1 class="hero__title">I make websites.</h1>
+        <p class="hero__pretitle"><a href="/about/">Hello, my name is Max</a></p>
+
+        <div class="hero__content">
+            <p>
+                I’m lead front-end developer at 
+                <a href="https://www.codista.com" class="hero__link hero__link--codista">Codista</a>, 
+                a software studio in Vienna. <br class="hero__br" />
+                I also write about the web on my <a href="/blog" class="hero__link">Blog</a> 
+                and on <a href="{{ author.social.twitter.url }}" class="hero__link hero__link--twitter">Twitter</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% if collections.featured.length %}
+<div class="u-mb4">
+    <h2>Featured Posts</h2>
+    {% include "featuredposts.njk" %}
+</div>
+{% endif %}
+
+{# 
+<div class="u-mb4">
+    {% signup %}
+    I'm starting an email list for people interested in front-end development! 
+    You can join here to be notified first whenever new posts are published. 
+    I'll send emails about once a month and you can unsubscribe any time.
+    {% endsignup %}
+</div> 
+#}

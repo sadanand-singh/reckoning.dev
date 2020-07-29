@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-family-display);
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2.25rem;
+}
+
+h3,
+.h3 {
+    font-size: 2rem;
+}
+
+p {
+    margin: 0;
+}
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include mq(md) {
+        font-size: 2rem;
+    }
+}
+
+.smalltitle {
+    font-size: 0.875rem;
+    font-family: $font-family-base;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    @include hover-focus {
+        color: var(--color-primary-offset);
+    }
+}
+
+blockquote {
+    font-style: italic;
+    padding-left: 2.25em;
+    border-left: 10px solid var(--color-border);
+
+    footer {
+        text-align: right;
+        font-size: 0.875em;
+    }
+}
+
+.bookmarklet {
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #43a9a3 !important;
+    background-color: rgba(#43a9a3, 0.25);
+    color: #43a9a3;
+    box-shadow: none !important;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &:active {
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+}

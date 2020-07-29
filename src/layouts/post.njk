@@ -1,0 +1,73 @@
+---
+layout: base
+---
+<article 
+    id="{{ title | slug }}" 
+    class="post h-entry" 
+    role="article" 
+    itemscope 
+    itemtype="http://schema.org/BlogPosting" 
+    aria-labelledby="{{ title | slug }}-title" 
+>
+    <header class="post__header">
+        <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
+        <div class="post__meta">
+
+            <p {% if demo %}class="u-mr2"{% endif %}>
+                <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
+                {% if tags %}
+                &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
+                {% endif %}
+                {% if draft %}
+                &sdot; <span class="post__status">(Draft)</span>
+                {% endif %}
+            </p>
+
+            {% if demo %}
+            <a href="{{ demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">
+                View Demo
+            </a>
+            {% endif %}
+
+        </div>
+    </header>
+
+    <div class="post__content e-content markdown" itemprop="articleBody">
+        {{ content | safe }}
+    </div>
+
+    <div class="post__footer">
+        <div hidden>
+            <a class="u-url" href="{{ page.url | url | absoluteUrl(site.url) }}">{{ title }}</a>
+            <p class="h-card p-author">
+                <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ author.name }}</a>
+                <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" />
+            </p>
+        </div>
+
+        <p class="post__footer__info">
+            Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }}
+        </p>
+
+        <a
+            href="https://twitter.com/intent/follow?screen_name={{ author.social.twitter.name }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Follow {{ author.name }} on Twitter"
+            class="btn btn--twitter"
+        >
+            {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
+        </a>
+    </div>
+</article>
+
+<div class="postsection">
+    <h3 class="postsection__title">Webmentions</h3>
+    {%- set webmentionUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+    {% include 'webmentions.njk' %}
+</div>
+
+<div class="postsection">
+    <h3 class="postsection__title">Other things I've written</h3>
+    {% include 'otherposts.njk' %}
+</div>

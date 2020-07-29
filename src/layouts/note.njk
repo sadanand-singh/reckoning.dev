@@ -1,0 +1,5 @@
+---
+layout: base
+---
+{% set noteUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% include 'note.njk' %}

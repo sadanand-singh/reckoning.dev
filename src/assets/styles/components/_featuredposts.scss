@@ -1,0 +1,145 @@
+$featuredposts-gap: 3rem;
+
+.featuredposts {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem ($featuredposts-gap/2) * -1;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+        grid-gap: $featuredposts-gap;
+    }
+
+    &__item {
+        display: block;
+        padding: $featuredposts-gap/2;
+        flex-basis: 100%;
+
+        @include mq(md) {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        @include mq(lg) {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+    }
+
+    @supports (display: grid) {
+        &__list {
+            margin: 2rem 0;
+        }
+
+        &__item {
+            padding: 0;
+            flex: none;
+            max-width: none;
+        }
+    }
+
+    &__footer {
+        text-align: right;
+    }
+    &__see-all {
+        font-size: 1.125rem;
+        display: inline-flex;
+        align-items: center;
+
+        .icon {
+            margin-left: 0.25rem;
+            transform: translateX(0);
+            transition: transform 0.2s;
+        }
+
+        @include hover-focus {
+            .icon {
+                transform: translateX(30%);
+            }
+        }
+    }
+}
+
+.featuredpost {
+    display: block;
+    height: 300px;
+    position: relative;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-bg-offset);
+    box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
+
+    @include mq(lg) {
+        background-position: center top;
+    }
+
+    &__inner {
+        @include coverall;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 1rem;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.15) 50%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+    }
+
+    &__link {
+        @include stretched-link;
+        @include hyphenate;
+        display: block;
+        color: inherit !important;
+    }
+
+    &__title {
+        display: block;
+        font-family: var(--font-family-display);
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+    &__description {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.2s $animation-curve-default,
+            transform 0.2s $animation-curve-default;
+    }
+    &__likecount {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+
+        .icon {
+            margin-right: 0.25rem;
+        }
+    }
+
+    &:hover &__description,
+    &__link:focus + &__description {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &:hover &__likecount,
+    &__link:focus ~ &__likecount {
+        display: none;
+    }
+
+    &:hover &__inner,
+    &:focus-within &__inner {
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+    }
+}
