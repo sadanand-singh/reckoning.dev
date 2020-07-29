@@ -18,7 +18,20 @@ As Sarah Drasner puts it in ["In Defense of a Fussy Website"](https://css-tricks
     Apps are currently conveying little care for UX, guidance, richness, and — well, for humans trying to communicate through a computer, we’re certainly bending a lot to… the computer.</p>
 </blockquote>
 
-I really liked that post, so I made small website meant to showcase how a more personal web could look like, and hopefully give someone else inspiration to make their own corner of the web a bit weirder.
+I really liked that post, so I made small website meant to showcase how a more personal web could look like, and hopefully give someone else inspiration to make their own corner of the web a bit weirder $x=\frac{a}{3}$.
+
+$$
+\begin{array}{c}
+
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+
+\nabla \cdot \vec{\mathbf{B}} & = 0
+
+\end{array}
+$$
 
 ## More whimsy, please!
 
@@ -34,3 +47,9 @@ I've collected a few of my favorites to start, but anyone can add a site to the 
 Just [open an issue on Github](https://github.com/maxboeck/whimsical/issues/new?template=add-this-website.md&title=Add+this+Website%21) and let me know.
 
 Let's see some fussy websites!
+
+$$
+$$
+
+$$
+$$

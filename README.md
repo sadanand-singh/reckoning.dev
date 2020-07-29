@@ -1,9 +1,6 @@
-# mxb.dev
+# reckoning.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/410a4404-3fb7-4501-8874-855ae2537cc4/deploy-status)](https://app.netlify.com/sites/serene-haibt-80ebc8/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/57999461-2350-4da3-8788-ca4e0e6dcb30/deploy-status)](https://app.netlify.com/sites/mxb/deploys)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-
-Source code for [reckoning.dev](https://mxb.dev), my personal website, built with [Eleventy](https://www.11ty.io).
+Source code for [reckoning.dev](https://reckoning.dev), my personal website, built with [Eleventy](https://www.11ty.io).
 
 ## Features
 
