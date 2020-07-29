@@ -1,12 +1,9 @@
-import { h, render } from 'preact'
-import Sharer from './Sharer'
+import { h, render } from 'preact';
+import Sharer from './Sharer';
 
 const SHARING_ENDPOINT =
-    process.env.NODE_ENV === 'production'
-        ? '/.netlify/functions/share'
-        : 'http://localhost:9000/share'
+  process.env.NODE_ENV === 'production'
+    ? '/.netlify/functions/share'
+    : 'http://localhost:3000/share';
 
-render(
-    <Sharer action={SHARING_ENDPOINT} />,
-    document.getElementById('sharer-root')
-)
+render(<Sharer action={SHARING_ENDPOINT} />, document.getElementById('sharer-root'));
