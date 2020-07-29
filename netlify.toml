@@ -4,7 +4,7 @@
     functions = "functions"
 
 [build.environment]
-    NODE_VERSION = "12.18.3"
+    NODE_VERSION = "12.18"
     YARN_VERSION = "1.22.4"
 
 [[headers]]
