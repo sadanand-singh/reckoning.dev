@@ -1,27 +1,27 @@
 {
-    "name": "Max Böck",
-    "email": "hello@mxb.dev",
-    "avatar": "/assets/images/avatar2.jpg",
-    "social": {
-        "twitter": {
-            "name": "mxbck",
-            "url": "https://twitter.com/mxbck"
-        },
-        "github": {
-            "name": "maxboeck",
-            "url": "https://github.com/maxboeck"
-        },
-        "codepen": {
-            "name": "mxbck",
-            "url": "https://codepen.io/mxbck/"
-        },
-        "notist": {
-            "name": "mxb",
-            "url": "https://noti.st/mxb"
-        },
-        "keybase": {
-            "name": "mxb",
-            "url": "https://keybase.io/mxb"
-        }
+  "name": "Sadanand Singh",
+  "email": "hello@reckoning.dev",
+  "avatar": "/assets/images/avatar2.jpg",
+  "social": {
+    "twitter": {
+      "name": "reckoningdev",
+      "url": "https://twitter.com/reckoningdev"
+    },
+    "github": {
+      "name": "sadanand-singh",
+      "url": "https://github.com/sadanand-singh"
+    },
+    "stackoverflow": {
+      "name": "reckoningdev",
+      "url": "https://stackoverflow.com/users/13244305/reckoningdev"
+    },
+    "linkedin": {
+      "name": "sadanandsingh",
+      "url": "https://www.linkedin.com/in/sadanandsingh/"
+    },
+    "keybase": {
+      "name": "reckoningdev",
+      "url": "https://keybase.io/reckoningdev"
     }
+  }
 }

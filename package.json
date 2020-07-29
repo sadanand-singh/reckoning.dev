@@ -1,7 +1,7 @@
 {
-  "name": "mxb.dev",
+  "name": "reckoning.dev",
   "version": "4.1.0",
-  "description": "Personal Website of Max Böck",
+  "description": "Personal Website of Sadanand Singh",
   "scripts": {
     "start": "gulp build:dev",
     "build": "NODE_ENV=production gulp build && yarn run build:lambda",
@@ -12,9 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/maxboeck/mxb"
+    "url": "http://github.com/sadanand-singh/reckoning.dev"
   },
-  "author": "Max Böck",
+  "author": "Sadanand Singh",
   "license": "MIT",
   "browserslist": [
     "defaults"

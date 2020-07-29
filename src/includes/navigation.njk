@@ -27,14 +27,14 @@
                     class="nav__link"
                     {% if isCurrent %}aria-current="page"{% endif %}
                 >
-                    <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span>
+                    {# <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span> #}
                     {{ nav.data.navtitle }}
                 </a>
             </li>
         {%- endfor -%}
         </ul>
     </div>
-    
+
     {# Menu BG Animation #}
     <div class="nav__bg">
         <div class="nav__bg__circle"></div>

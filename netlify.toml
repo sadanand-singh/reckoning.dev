@@ -4,8 +4,8 @@
     functions = "functions"
 
 [build.environment]
-    NODE_VERSION = "10.15"
-    YARN_VERSION = "1.21.1"
+    NODE_VERSION = "12.18.3"
+    YARN_VERSION = "1.22.4"
 
 [[headers]]
     for = "/*"
@@ -14,26 +14,6 @@
         X-XSS-Protection = "1; mode=block"
         X-Content-Type-Options = "nosniff"
         Referrer-Policy= "no-referrer-when-downgrade"
-
-# Netlify subdomain
-[[redirects]]
-    from = "https://mxb.netlify.com/*"
-    to = "https://mxb.dev/:splat"
-    status = 301
-    force = true
-
-# AT domain
-[[redirects]]
-    from = "https://mxb.at/*"
-    to = "https://mxb.dev/:splat"
-    status = 301
-    force = true
-
-[[redirects]]
-    from = "https://www.mxb.at/*"
-    to = "https://mxb.dev/:splat"
-    status = 301
-    force = true
 
 # Bots
 [[redirects]]
