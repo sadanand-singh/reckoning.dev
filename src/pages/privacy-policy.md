@@ -32,23 +32,5 @@ The processing of incoming Webmentions is based on the legitimate interest to en
 
 If your personal data was published in a webmention, you may at any time demand the removal of it from this website. To do so, please notify me and point me to the entry in question.
 
-## Responsible Data Controller
-
-__Maximilian Böck__  
-Antonigasse 55  
-A-1170 Vienna  
-Austria
-
-If you have any questions or concerns about this,  
+If you have any questions or concerns about this,
 please contact me at <a href="mailto:{{ author.email | obfuscate | safe }}">{{ author.email | obfuscate | safe }}</a>
-
-## Official Complaint
-
-It is within your rights to file an official complaint with the responsible data protection authority, should you believe this website is in violation of your privacy. I would still prefer that you reach out to me personally first - otherwise please contact:
-
-__Österreichische Datenschutzbehörde__  
-Hohenstaufengasse 3  
-1010 Vienna, AT  
-[dsb@dsb.gv.at](mailto:dsb@dsb.gv.at)
-
-<p class="u-align-right"><em>Version: 2019-01-23</em></p>
