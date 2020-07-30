@@ -16,6 +16,15 @@ const globs = {
   notes: 'src/notes/*.md',
 };
 
+function relatedPost(post) {
+  return {
+    title: post.data.title,
+    url: post.url,
+    date: post.date,
+    tags: post.data.tags,
+  };
+}
+
 const anchorSlugify = (s) =>
   encodeURIComponent(
     'h-' +
@@ -83,10 +92,30 @@ module.exports = function (config) {
 
   // Collections: Posts
   config.addCollection('posts', function (collection) {
-    return collection
+    const posts = collection
       .getFilteredByGlob([globs.posts, globs.drafts])
       .filter((item) => item.data.permalink !== false)
       .filter((item) => !(item.data.draft && isProduction));
+    return posts.map((a) => {
+      let related = [];
+      posts.forEach((b) => {
+        if (a.url !== b.url) {
+          const alpha = [...a.data.tags].sort();
+          const beta = [...b.data.tags].sort();
+
+          const matches = alpha.filter((keyword) => {
+            return beta.includes(keyword);
+          });
+
+          const score = matches.length;
+          if (score > 0) {
+            related.push(Object.assign(relatedPost(b), { score }));
+          }
+        }
+      });
+      a.data.related = related.sort((a, b) => b.score - a.score || b.date - a.date).slice(0, 5);
+      return a;
+    });
   });
 
   // Collections: Featured Posts

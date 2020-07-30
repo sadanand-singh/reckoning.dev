@@ -1,17 +1,15 @@
-const htmlmin = require('html-minifier')
-const markdownIt = require('markdown-it')()
-const random = require('lodash/random')
+const htmlmin = require('html-minifier');
+const markdownIt = require('markdown-it')();
+const random = require('lodash/random');
 
 const minify = (content) =>
-    htmlmin.minify(content, {
-        removeComments: true,
-        collapseWhitespace: true
-    })
+  htmlmin.minify(content, {
+    removeComments: true,
+    collapseWhitespace: true,
+  });
 
 const generateSpinner = () => {
-    const layer = (
-        index
-    ) => `<div class="spinner__layer spinner__layer--${index}">
+  const layer = (index) => `<div class="spinner__layer spinner__layer--${index}">
         <div class="spinner__circle-clipper spinner__left">
             <div class="spinner__circle"></div>
         </div>
@@ -21,70 +19,70 @@ const generateSpinner = () => {
         <div class="spinner__circle-clipper spinner__right">
             <div class="spinner__circle"></div>
         </div>
-    </div>`
+    </div>`;
 
-    const layers = []
-    for (let i = 1; i <= 4; i++) {
-        layers.push(layer(i))
-    }
-    const output = `<div class="spinner">
+  const layers = [];
+  for (let i = 1; i <= 4; i++) {
+    layers.push(layer(i));
+  }
+  const output = `<div class="spinner">
         <div class="spinner__layercontainer">${layers.join('')}</div>
-    </div>`
+    </div>`;
 
-    return minify(output)
-}
+  return minify(output);
+};
 
 const generateIcon = (iconName, useInline) => {
-    const spriteUrl = '/assets/icons/icons.sprite.svg'
-    const iconId = `#icon-${iconName}`
-    const href = useInline ? iconId : spriteUrl + iconId
+  const spriteUrl = '/assets/icons/icons.sprite.svg';
+  const iconId = `#icon-${iconName}`;
+  const href = useInline ? iconId : spriteUrl + iconId;
 
-    const output = `<svg class="icon icon--${iconName}" role="img" aria-hidden="true" width="24" height="24">
+  const output = `<svg class="icon icon--${iconName}" role="img" aria-hidden="true" width="24" height="24">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${href}"></use>
-    </svg>`
+    </svg>`;
 
-    return minify(output)
-}
+  return minify(output);
+};
 
 const generateSignupForm = (source) => {
-    const MC = {
-        url: 'https://dev.us18.list-manage.com/subscribe/post',
-        user: '64781452976687d0f4f2ea370',
-        list: '772b9208b5'
-    }
+  const MC = {
+    url: 'https://outlook.us3.list-manage.com/subscribe/post',
+    user: '6fe17db82abcd74b9d0793a2a',
+    list: '2343b8b2ee',
+  };
 
-    // const prevIssues =
-    // `https://us18.campaign-archive.com/home/?u=${MC.user}&id=${MC.id}`
+  // const prevIssues =
+  // `https://us18.campaign-archive.com/home/?u=${MC.user}&id=${MC.id}`
 
-    const examples = [
-        {
-            name: 'Sam',
-            email: 'sam@website.com'
-        },
-        {
-            name: 'Alice',
-            email: 'alice@awesome.io'
-        },
-        {
-            name: 'Bob',
-            email: 'bob@gmail.com'
-        },
-        {
-            name: 'Lisa',
-            email: 'lisa@website.com'
-        },
-        {
-            name: 'Phil',
-            email: 'phil@website.com'
-        }
-    ]
-    const placeholder = examples[random(examples.length - 1)]
-    const spinner = generateSpinner()
+  const examples = [
+    {
+      name: 'Sam',
+      email: 'sam@website.com',
+    },
+    {
+      name: 'Alice',
+      email: 'alice@awesome.io',
+    },
+    {
+      name: 'Bob',
+      email: 'bob@gmail.com',
+    },
+    {
+      name: 'Lisa',
+      email: 'lisa@website.com',
+    },
+    {
+      name: 'Phil',
+      email: 'phil@website.com',
+    },
+  ];
+  const placeholder = examples[random(examples.length - 1)];
+  const spinner = generateSpinner();
 
-    const output = `<form 
-        action="${MC.url}" 
-        method="POST" 
-        class="form form--signup" 
+  const output = `<form
+        action="${MC.url}"
+        method="POST"
+        class="form form--signup"
     >
         <div class="form__body">
             <input type="hidden" name="u" value="${MC.user}" />
@@ -113,15 +111,15 @@ const generateSignupForm = (source) => {
             <div class="form__feedback js-signup-widget-feedback" hidden></div>
             ${spinner}
         </div>
-    </form>`
+    </form>`;
 
-    return minify(output)
-}
+  return minify(output);
+};
 
 const generateSignupSection = (title, text, source) => {
-    const form = generateSignupForm(source)
-    const icon = generateIcon('check')
-    const output = `
+  const form = generateSignupForm(source);
+  const icon = generateIcon('check');
+  const output = `
         <aside class="signup js-signup-widget" data-nosnippet>
             <div class="signup__front">
                 <h2 class="signup__title">${title}</h2>
@@ -135,43 +133,43 @@ const generateSignupSection = (title, text, source) => {
             <div class="signup__back js-signup-backside"></div>
             <div class="signup__icon">${icon}</div>
         </aside>
-    `
+    `;
 
-    return minify(output)
-}
+  return minify(output);
+};
 
 const generateCallout = (content, type) => {
-    let icon
+  let icon;
 
-    switch (type) {
-        case 'action':
-            icon = 'check'
-            break
+  switch (type) {
+    case 'action':
+      icon = 'check';
+      break;
 
-        case 'warning':
-            icon = 'warning'
-            break
+    case 'warning':
+      icon = 'warning';
+      break;
 
-        case 'tip':
-            icon = 'lightbulb'
-            break
+    case 'tip':
+      icon = 'lightbulb';
+      break;
 
-        case 'info':
-        default:
-            icon = 'info'
-            break
-    }
+    case 'info':
+    default:
+      icon = 'info';
+      break;
+  }
 
-    const output = `<div class="callout callout--${type}">
+  const output = `<div class="callout callout--${type}">
         <span class="callout__icon">${generateIcon(icon)}</span>
         <div class="callout__content">${markdownIt.render(content)}</div>
-    </div>`
+    </div>`;
 
-    return minify(output)
-}
+  return minify(output);
+};
 
 module.exports = {
-    icon: generateIcon,
-    signupSection: generateSignupSection,
-    callout: generateCallout
-}
+  icon: generateIcon,
+  signupSection: generateSignupSection,
+  callout: generateCallout,
+};

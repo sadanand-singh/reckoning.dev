@@ -1,33 +1,33 @@
 {
-    "lang": "en",
-    "dir": "ltr",
-    "name": "Max Böck",
-    "short_name": "MXB",
-    "icons": [
-        {
-            "src": "/assets/images/favicon/android-chrome-192x192.png?v=1",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/assets/images/favicon/android-chrome-512x512.png?v=1",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#1a1a1a",
-    "background_color": "#1a1a1a",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "orientation": "natural",
-    "share_target": {
-        "action": "/share/",
-        "method": "GET",
-        "enctype": "application/x-www-form-urlencoded",
-        "params": {
-            "title": "title",
-            "text": "text",
-            "url": "url"
-        }
+  "lang": "en",
+  "dir": "ltr",
+  "name": "reckoning.dev",
+  "short_name": "reckoning-dev",
+  "icons": [
+    {
+      "src": "/assets/images/favicon/android-chrome-192x192.png?v=1",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicon/android-chrome-512x512.png?v=1",
+      "sizes": "512x512",
+      "type": "image/png"
     }
+  ],
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "natural",
+  "share_target": {
+    "action": "/share/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
