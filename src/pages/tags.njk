@@ -1,0 +1,24 @@
+---
+layout: base
+permalink: /tags/{{ tag }}/
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+---
+<div class="page page--blog">
+    <header class="page__header">
+        <h1 class="postlist__link u-url">Posts with Tag - <span style="color:#EA67EC"> {{ tag | capitalize}} </span> </h1>
+    </header>
+    <div class="page__content">
+        {%- set postlist = collections[tag] -%}
+        {% include "postlist.njk" %}
+    </div>
+</div>

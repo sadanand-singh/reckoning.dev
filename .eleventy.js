@@ -97,6 +97,21 @@ module.exports = function (config) {
       .sort((a, b) => b.date - a.date);
   });
 
+  config.addCollection('tagList', function (collection) {
+    const tagsSet = new Set();
+    collection
+      .getFilteredByGlob([globs.posts, globs.drafts])
+      .filter((item) => item.data.permalink !== false)
+      .filter((item) => !(item.data.draft && isProduction))
+      .forEach((item) => {
+        if (!item.data.tags) return;
+        item.data.tags
+          .filter((tag) => !['post', 'all', 'nav'].includes(tag))
+          .forEach((tag) => tagsSet.add(tag));
+      });
+    return Array.from(tagsSet).sort();
+  });
+
   // Collections: Notes
   config.addCollection('notes', function (collection) {
     return collection.getFilteredByGlob(globs.notes).reverse();

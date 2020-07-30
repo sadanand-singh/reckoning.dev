@@ -1,6 +1,6 @@
 ---
 title: Color Theme Switcher
-tags: code, design
+tags: [code, design]
 image: cover.jpg
 description: "Let users customize your website with their favorite color scheme! Your site has a dark mode? That's cute. Mine has ten different themes now, and they're all named after Mario Kart race tracks."
 featured: true
@@ -12,12 +12,12 @@ featuredImageColor: "#77309A"
 
 And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode. Fortunately though, this coincided nicely with widespread support for CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) and the introduction of a new `prefers-color-scheme` media query.
 
-There's lots of tutorials on [how to build dark modes](https://css-tricks.com/dark-modes-with-css/) already, but why limit yourself to light and dark? Only a Sith deals in absolutes. 
+There's lots of tutorials on [how to build dark modes](https://css-tricks.com/dark-modes-with-css/) already, but why limit yourself to light and dark? Only a Sith deals in absolutes.
 
-That's why I decided to build a new feature on my site: 
-__dynamic color themes!__ Yes, instead of two color schemes, I now have ten! That's eight better than the previous website! 
+That's why I decided to build a new feature on my site:
+__dynamic color themes!__ Yes, instead of two color schemes, I now have ten! That's eight better than the previous website!
 
-Go ahead and try it, hit that __paintroller-button__ in the header. 
+Go ahead and try it, hit that __paintroller-button__ in the header.
 I'll wait.
 
 *If you're reading this somewhere else, the effect would look something like this:*
@@ -56,10 +56,10 @@ First up, we need some data. We need to define our themes in a central location,
 ]
 ```
 
-Our color schemes are objects in an array, which is now available during build. Each theme gets a `name`, `id` and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I assigned each theme eight properties. 
+Our color schemes are objects in an array, which is now available during build. Each theme gets a `name`, `id` and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I assigned each theme eight properties.
 
 {% callout "tip" %}
-It's a good idea to give these properties logical names instead of visual ones like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust another color on interactions like hover and such. 
+It's a good idea to give these properties logical names instead of visual ones like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust another color on interactions like hover and such.
 {% endcallout %}
 
 In addition to the "default" and "dark" themes I already had before, I created eight more themes this way. I used a couple of different sources for inspiration; the ones I liked best are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
@@ -93,7 +93,7 @@ excludeFromSitemap: true
     --color-secondary: {{ colors.secondary }};
 {% endmacro %}
 
-/* 
+/*
   get the "default" light and dark color schemes
   to use if no other theme was selected
 */
@@ -117,7 +117,7 @@ excludeFromSitemap: true
 }
 
 /*
-  finally, each theme is selectable through a 
+  finally, each theme is selectable through a
   data-attribute on the document. E.g:
   <html data-theme="bowser">
 */
@@ -249,7 +249,7 @@ setTheme(id) {
 
 On a server-rendered site, we could store that piece of data in a cookie instead and apply the theme id to the html element before serving the page. Since we're dealing with a static site here though, there is no server-side processing - so we have to do a small workaround.
 
-We'll retrieve the theme from `localStorage` in a tiny additional script in the head, right after the stylesheet is loaded. Contrary to the rest of the Javascript, we want this to execute as early as possible to avoid a FODT ("flash of default theme"). 
+We'll retrieve the theme from `localStorage` in a tiny additional script in the head, right after the stylesheet is loaded. Contrary to the rest of the Javascript, we want this to execute as early as possible to avoid a FODT ("flash of default theme").
 
 OK that's not actually a real term. I made that up.
 
@@ -258,7 +258,7 @@ OK that's not actually a real term. I made that up.
     <link rel="stylesheet" href="/assets/css/main.css">
     <script>
         // if there's a theme id in localstorage, use it on the <html>
-        localStorage.getItem('theme') && 
+        localStorage.getItem('theme') &&
         document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
     </script>
 </head>

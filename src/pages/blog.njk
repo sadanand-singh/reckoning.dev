@@ -8,7 +8,13 @@ permalink: blog/index.html
 ---
 <div class="page page--blog">
     <header class="page__header">
-        <h1 class="page__title">{{ title }}</h1>
+
+    <h1 class="page__title">{{ title }}</h1>
+    <br/>
+        <strong>TAGS: </strong>
+    {% for tag in collections.tagList %}
+        <a href='/tags/{{tag}}'><span class="post__tags p-category">#{{ tag }}</span></a>
+    {% endfor %}
     </header>
     <div class="page__content">
         {%- set postlist = collections.posts -%}
