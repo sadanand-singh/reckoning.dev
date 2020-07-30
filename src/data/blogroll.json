@@ -68,5 +68,82 @@
     "feed": "https://www.zachleat.com/web/feed/",
     "description": "Zach is a web developer working at Netlify. He's currently fixated on web fonts and making the static site generator Eleventy. His blog has interesting posts about a lot of different topics.",
     "twitter": "zachleat"
+  },
+  {
+    "title": "Maithra Raghu",
+    "url": "https://maithraraghu.com/",
+    "feed": "https://twitter.com/maithra_raghu",
+    "description": "Research Scientist @GoogleAI. CS PhD @Cornell. Working on Deep Learning and Applications to Healthcare. #ForbesUnder30 in Science. #WiML2015 organizer",
+    "twitter": "maithra_raghu"
+  },
+  {
+    "title": "Saumith Chintala",
+    "url": "https://soumith.ch/",
+    "feed": "https://soumith.ch/feed.xml",
+    "description": "Multi-modal world models, robots. I think deeply about lowering the barrier to use A.I. I co-created and lead PyTorch at Facebook A.I.",
+    "twitter": "soumithchintala"
+  },
+  {
+    "title": "NVIDIA AI Blog",
+    "url": "https://blogs.nvidia.com/",
+    "feed": "https://feeds.feedburner.com/nvidiablog",
+    "description": "From Knight Rider's KITT to Ironman's JARVIS, intelligent copilots have been a staple of forward-looking pop culture. Advancements in AI and high-performance...",
+    "twitter": "NVIDIAAI"
+  },
+  {
+    "title": "Sebastian Raschka",
+    "url": "https://sebastianraschka.com/",
+    "feed": "https://twitter.com/rasbt",
+    "description": "Asst. Prof. of Statistics @UWMadison. Machine Learning & Deep Learning researcher. Author of 'Python Machine Learning' & open source contributor.",
+    "twitter": "rasbt"
+  },
+  {
+    "title": "Daniel Roy",
+    "url": "http://danroy.org/",
+    "feed": "https://twitter.com/roydanroy",
+    "description": "Scientist. Assoc Prof of Stats/CS @UofT; Founding Member @VectorInst; Canada CIFAR AI Chair. I study inference / computation to understand machine intelligence.",
+    "twitter": "roydanroy"
+  },
+  {
+    "title": "Kyunghyun Cho",
+    "url": "https://kyunghyuncho.me",
+    "feed": "https://kyunghyuncho.me/feed/",
+    "description": "Associate Professor of CS and DS at @nyuniversity & @CILVRatNYU",
+    "twitter": "kchonyc"
+  },
+  {
+    "title": "Hardmaru",
+    "url": "https://blog.otoro.net/",
+    "feed": "https://blog.otoro.net/feed",
+    "description": "Nice bunch of posts from @hardmaru, A research scientist at google brain",
+    "twitter": "hardmaru"
+  },
+  {
+    "title": "François Chollet",
+    "url": "https://blog.keras.io",
+    "feed": "https://twitter.com/fchollet",
+    "description": "Deep learning @google. Creator of Keras, neural networks library. Author of 'Deep Learning with Python'.",
+    "twitter": "fchollet"
+  },
+  {
+    "title": "Sebastian Ruder",
+    "url": "https://ruder.io/",
+    "feed": "https://twitter.com/seb_ruder",
+    "description": "Research scientist @DeepMind. Natural language processing. Transfer learning. Making ML & NLP accessible @eurnl @DeepIndaba",
+    "twitter": "seb_ruder"
+  },
+  {
+    "title": "Tania Rascia",
+    "url": "https://www.taniarascia.com/",
+    "feed": "https://www.taniarascia.com/rss.xml",
+    "description": "Open-sourcerer writing the missing instruction manuals of the web. No ads, no bullshit.",
+    "twitter": "taniarascia"
+  },
+  {
+    "title": "Tomasz Malisiewicz",
+    "url": "https://www.computervisionblog.com/",
+    "feed": "https://www.computervisionblog.com/feeds/posts/default",
+    "description": "Sr. Research Scientist @Amazon, Robotics AI. SLAM, Deep Learning, and Robotic Mobility.",
+    "twitter": "quantombone"
   }
 ]
