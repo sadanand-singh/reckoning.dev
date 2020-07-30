@@ -12,8 +12,8 @@ permalink: blog/index.html
     <h1 class="page__title">{{ title }}</h1>
     <br/>
         <strong>TAGS: </strong>
-    {% for tag in collections.tagList %}
-        <a href='/tags/{{tag}}'><span class="post__tags p-category">#{{ tag }}</span></a>
+    {% for tagC in collections.tagList %}
+        <a href='/tags/{{ tagC.tag }}'><span class="post__tags p-category" style="color:{{ tagC.cls }}">#{{ tagC.tag }}</span></a>
     {% endfor %}
     </header>
     <div class="page__content">

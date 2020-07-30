@@ -109,7 +109,12 @@ module.exports = function (config) {
           .filter((tag) => !['post', 'all', 'nav'].includes(tag))
           .forEach((tag) => tagsSet.add(tag));
       });
-    return Array.from(tagsSet).sort();
+    const d = Array.from(tagsSet).sort();
+    const tags = new Array();
+    d.forEach((item) =>
+      tags.push({ tag: item, cls: '#' + (((1 << 24) * Math.random()) | 0).toString(16) })
+    );
+    return tags;
   });
 
   // Collections: Notes
