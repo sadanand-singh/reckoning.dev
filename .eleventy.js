@@ -81,12 +81,43 @@ module.exports = function (config) {
     });
   });
 
+  function relatedPost(post) {
+    return {
+      title: post.data.title,
+      url: post.url,
+      tags: post.data.tags,
+      date: post.date,
+      draft: post.data.draft,
+    };
+  }
+
   // Collections: Posts
   config.addCollection('posts', function (collection) {
-    return collection
+    const posts = collection
       .getFilteredByGlob([globs.posts, globs.drafts])
       .filter((item) => item.data.permalink !== false)
       .filter((item) => !(item.data.draft && isProduction));
+    return posts.map((a) => {
+      let related = [];
+      posts.forEach((b) => {
+        if (a.url !== b.url) {
+          const alpha = [...a.data.tags].sort();
+          const beta = [...b.data.tags].sort();
+
+          const matches = alpha.filter((keyword) => {
+            return beta.includes(keyword);
+          });
+
+          const score = matches.length;
+          const interval = b.date - a.date;
+          related.push(Object.assign(relatedPost(b), { score, interval }));
+        }
+      });
+      a.data.related = related
+        .sort((a, b) => b.score - a.score || b.interval - a.interval)
+        .slice(0, 5);
+      return a;
+    });
   });
 
   // Collections: Featured Posts
