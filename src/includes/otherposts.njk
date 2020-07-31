@@ -1,5 +1,3 @@
-{% set otherposts = collections.posts | excludePost(page) | slice(-5) %}
-
 <ol class="otherposts">
     {% for post in related %}
         <li class="otherposts__item">
