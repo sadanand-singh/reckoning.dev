@@ -10,7 +10,7 @@ permalink: resume/index.html
 More than 6 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments. Proficient in Python, C++ and Linux.
 
 - [reckoning.dev](https://reckoning.dev)
-- [me@reckoning.dev](mailto:me@reckoning.dev)
+- [me@reckoning.dev](mailto:mrg6nm2ji@relay.firefox.com)
 - [LinkedIn Profile](https://www.linkedin.com/in/sadanandsingh/)
 - San Francisco, CA
 
