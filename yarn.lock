@@ -947,6 +947,13 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@iktakahiro/markdown-it-katex@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@iktakahiro/markdown-it-katex/-/markdown-it-katex-4.0.0.tgz#a3d585d911d078a78aa0ee8ef17922d3ebdcd1f8"
+  integrity sha512-GtXEkzkh8DtgmeG5VEqhB3X/7ZniFVbHFg54zHB9JJg5WsAwl1q46uRbOt7Vgo6UJ0e1WQBRf7IqUojdS5M7Ng==
+  dependencies:
+    katex "0.11.1"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -5722,12 +5729,12 @@ jwt-decode@^2.2.0:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
   integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
 
-katex@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/katex/-/katex-0.6.0.tgz#12418e09121c05c92041b6b3b9fb6bab213cb6f3"
-  integrity sha1-EkGOCRIcBckgQbazuftrqyE8tvM=
+katex@0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.11.1.tgz#df30ca40c565c9df01a466a00d53e079e84ffaa2"
+  integrity sha512-5oANDICCTX0NqYIyAiFCCwjQ7ERu3DQG2JFHLbYOf+fXaMoH8eg/zOq5WSYJsKMi/QebW+Eh3gSM+oss1H/bww==
   dependencies:
-    match-at "^0.1.0"
+    commander "^2.19.0"
 
 kew@^0.7.0:
   version "0.7.0"
@@ -6313,12 +6320,10 @@ markdown-it-anchor@^5.0.2:
   resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.3.0.tgz#d549acd64856a8ecd1bea58365ef385effbac744"
   integrity sha512-/V1MnLL/rgJ3jkMWo84UR+K+jF1cxNG1a+KwqeXqTIJ+jtA8aWSHuigx8lTzauiIjBDbwF3NcWQMotd0Dm39jA==
 
-markdown-it-katex@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/markdown-it-katex/-/markdown-it-katex-2.0.3.tgz#d7b86a1aea0b9d6496fab4e7919a18fdef589c39"
-  integrity sha1-17hqGuoLnWSW+rTnkZoY/e9YnDk=
-  dependencies:
-    katex "^0.6.0"
+markdown-it-figure-caption@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-figure-caption/-/markdown-it-figure-caption-0.1.0.tgz#6e1b732de356c8069fd1048460f6d0a90375e531"
+  integrity sha1-bhtzLeNWyAaf0QSEYPbQqQN15TE=
 
 markdown-it@^10.0.0:
   version "10.0.0"
@@ -6330,11 +6335,6 @@ markdown-it@^10.0.0:
     linkify-it "^2.0.0"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
-
-match-at@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.1.tgz#25d040d291777704d5e6556bbb79230ec2de0540"
-  integrity sha512-h4Yd392z9mST+dzc+yjuybOGFNOZjmXIPKWjxBd1Bb23r4SmDOsk2NYCU2BMUBGbSpZqwVsZYNq26QS3xfaT3Q==
 
 matchdep@^2.0.0:
   version "2.0.0"

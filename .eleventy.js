@@ -5,7 +5,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const htmlmin = require('html-minifier');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const markdownItKatex = require('markdown-it-katex');
+const markdownItKatex = require('@iktakahiro/markdown-it-katex');
 
 const filters = require('./_eleventy/filters.js');
 const shortcodes = require('./_eleventy/shortcodes.js');
@@ -60,8 +60,10 @@ module.exports = function (config) {
     'md',
     markdownIt({
       html: true,
-      breaks: true,
+      xhtmlOut: true,
+      breaks: false,
       typographer: true,
+      linkify: true,
     })
       .use(markdownItKatex, { throwOnError: false, errorColor: '#cc0000' })
       .use(markdownItAnchor, {
@@ -72,6 +74,7 @@ module.exports = function (config) {
         level: 2,
         slugify: anchorSlugify,
       })
+      .use(require('markdown-it-figure-caption'))
   );
 
   // Collections: Navigation
