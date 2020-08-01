@@ -1,8 +1,8 @@
 ---
-title: "BorderDet: Border Feature for Dense Object Detection"
-date: "2020-08-01T22:37:27.496Z"
-syndicate: false
-link: "https://arxiv.org/pdf/2007.11056v1.pdf"
+title: 'BorderDet: Border Feature for Dense Object Detection'
+date: '2020-08-01T22:37:27.496Z'
+syndicate: true
+link: 'https://arxiv.org/pdf/2007.11056v1.pdf'
 tags: link
 ---
 
