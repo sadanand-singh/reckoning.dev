@@ -117,7 +117,7 @@ module.exports = function (config) {
         }
       });
       a.data.related = related
-        .sort((a, b) => b.score - a.score || b.interval - a.interval)
+        .sort((a, b) => b.score - a.score || a.interval - b.interval)
         .slice(0, 5);
       return a;
     });

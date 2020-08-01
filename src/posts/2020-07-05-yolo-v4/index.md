@@ -3,6 +3,7 @@ title: 'YOLO-v4 Object Detector'
 date: 2020-07-05
 tags:
   - DeepLearning
+  - MachineLearning
   - Detection
 slug: yolo-v4
 ---
@@ -204,6 +205,12 @@ on a similar concept that works on convolution layers.
 ![Regular Pixel Dropout vs DropBlock](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/dropblock.png)
 
 Instead of dropping individual pixels, a block of block_size × block_size of pixels is dropped.
+
+{% signup "By the way..." %}
+I'm starting an email list for people interested in AI development and programming in general.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
+No strings attached, unsubscribe anytime.
+{% endsignup %}
 
 **Class label smoothing** acts as a regularizer, a typical formulation for it can be:
 

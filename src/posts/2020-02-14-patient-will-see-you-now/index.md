@@ -2,14 +2,14 @@
 title: 'Book Review: The Patient Will See You Now'
 date: 2020-02-14
 tags:
-  - Review
+  - Reading
 slug: patient-will-see-you-now
 ---
 
 We all can relate to this common routine at the doctor's - spending hours in the waiting room next
 to coughing people, increasing the risk of us getting sicker than we were in the first place.
 
-<!-- excerpt -->
+<!-- more -->
 
 {% callout "tip" %}
 **TL;DR**
@@ -57,6 +57,12 @@ diseases at a cost ten times cheaper than the market price today. My own company
 help of our [app](https://apps.apple.com/us/app/whiterabbit-app/id1459556883), we can remind women
 for their annual mammograms, have all their imaging data in one place, share images and reports
 with friends, medical care team and doctors.
+
+{% signup "By the way..." %}
+I'm starting an email list for people interested in AI development and programming in general.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
+No strings attached, unsubscribe anytime.
+{% endsignup %}
 
 ## Technology shifting power from doctors to patients
 

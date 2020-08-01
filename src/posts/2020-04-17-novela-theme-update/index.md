@@ -1,14 +1,16 @@
 ---
 title: 'Using Novela Theme with Modifications'
 date: 2020-04-17
-tags: Blog
+tags:
+  - Blog
+  - Guides
 slug: novela-theme-update
 ---
 
 The world of web design, programming, and specially [gatsbyjs] has been moving at an astonishing
 pace. If you have been following me here, you would know, I am all for new, and cleaner looks.
 
-<!-- excerpt -->
+<!-- more -->
 
 {% callout "warning" %}
 Note that since moving to [11ty](https://www.11ty.dev/), many of the codes and features described
@@ -120,7 +122,7 @@ time, not at the build time. In all the files where `katex-display` class is mod
 global `document` variable, I had to add the conditional check of document not being undefined.
 (See the highlighted line in the codeblock.)
 
-```jsx
+```jsx/2
 //Change all KaTeX colors
 if (typeof document !== `undefined`) {
   Array.from(document.getElementsByClassName('katex-display')).forEach((element) => {
@@ -142,7 +144,7 @@ I enabled this by first enabling the `draft` field in the frontmatter by adding 
 Then, in `@narative/gatsby-theme-novela/src/gatsby/node/onCreateNode.js`, I added code to create
 new field for it (See the highlighted code below).
 
-```jsx
+```jsx/2-3,6-32
 ...
 const moment = require('moment-timezone');
 require('dotenv');
@@ -202,6 +204,12 @@ posts below a given post. I wanted to update its logic such that posts with most
 the ones with the least difference in post times from the current post get higher weight. The
 second rule ensures that posts around same dates are found to be more related than only the more
 recent ones.
+
+{% signup "By the way..." %}
+I'm starting an email list for people interested in AI development and programming in general.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
+No strings attached, unsubscribe anytime.
+{% endsignup %}
 
 This involved only a little bit of javascript update in
 `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js`.
