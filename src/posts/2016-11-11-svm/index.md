@@ -5,6 +5,9 @@ date: 2016-11-11
 tags:
   - 'Algorithms'
   - 'MachineLearning'
+featured: true
+featuredImage: algorithm.jpg
+featuredImageColor: '#1E2C54'
 ---
 
 In this post we will explore a class of machine learning methods called

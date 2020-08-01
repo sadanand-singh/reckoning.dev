@@ -5,6 +5,9 @@ tags:
   - MachineLearning
   - Algorithms
 slug: tree-based-models
+featured: true
+featuredImage: rforest.jpg
+featuredImageColor: '#1E2C54'
 ---
 
 Tree based learning algorithms are quite

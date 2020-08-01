@@ -6,6 +6,9 @@ tags:
   - MachineLearning
   - DeepLearning
 slug: mydlsetup
+featured: true
+featuredImage: linux.png
+featuredImageColor: '#1E2C54'
 ---
 
 Lately, a lot of my friends have been asking about my deep learning workstation setup. In this post

@@ -4,8 +4,10 @@ date: 2020-07-05
 tags:
   - DeepLearning
   - MachineLearning
-  - Detection
 slug: yolo-v4
+featured: true
+featuredImage: yolo-v4.png
+featuredImageColor: '#1E2C54'
 ---
 
 Object detection is useful for understanding what's in an image, describing both what is in an
