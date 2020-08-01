@@ -6,7 +6,7 @@ tags:
   - MachineLearning
 slug: yolo-v4
 featured: true
-featuredImage: yolo-v4.png
+featuredImage: detection.png
 featuredImageColor: '#1E2C54'
 ---
 

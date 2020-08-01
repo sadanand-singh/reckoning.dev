@@ -112,12 +112,12 @@ module.exports = function (config) {
           });
 
           const score = matches.length;
-          const interval = b.date - a.date;
+          const interval = Math.abs(b.date - a.date);
           related.push(Object.assign(relatedPost(b), { score, interval }));
         }
       });
       a.data.related = related
-        .sort((a, b) => b.score - a.score || a.interval - b.interval)
+        .sort((a1, b1) => b1.score - a1.score || a1.interval - b1.interval)
         .slice(0, 5);
       return a;
     });

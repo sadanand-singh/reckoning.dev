@@ -6,7 +6,7 @@ tags:
   - Algorithms
 slug: tree-based-models
 featured: true
-featuredImage: rforest.jpg
+featuredImage: tree.jpg
 featuredImageColor: '#1E2C54'
 ---
 

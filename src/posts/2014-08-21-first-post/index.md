@@ -17,6 +17,8 @@ being; with interests in world politics, economics, and society.
 This space is for my personal notes on different subjects. I plan to share my thoughts on following
 topics from time to time.
 
+ <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Who’s gonna read your personal blog because it has an RSS feed? I’m gonna read your personal blog because it has an RSS feed. <a href="https://t.co/mtcyKhEVet">pic.twitter.com/mtcyKhEVet</a></p>&mdash; Chris Coyier (@chriscoyier) <a href="https://twitter.com/chriscoyier/status/1214606808125341696?ref_src=twsrc%5Etfw">January 7, 2020</a></blockquote>
+
 - Technology
 - Statistics
 - Machine Learning
