@@ -64,13 +64,13 @@ const getLikeCount = (webmentions) => {
     return false;
   }
 
-  // if it's been less than 24 hours since the serverside fetch, abort
+  // if it's been less than 1 hours since the serverside fetch, abort
   if (lastFetchedTimestamp) {
     const now = DateTime.utc();
     const lastFetched = DateTime.fromISO(lastFetchedTimestamp, {
       zone: 'utc',
     });
-    if (lastFetched.plus({ hours: 24 }) > now) {
+    if (lastFetched.plus({ hours: 1 }) > now) {
       return false;
     }
   }
