@@ -18,6 +18,10 @@ of tree based models are: [decision trees](https://en.wikipedia.org/wiki/Decisio
 [random forest](https://en.wikipedia.org/wiki/Random_forest), and
 [boosted trees](https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/).
 
+**Table of Contents**
+
+[toc]
+
 In this post, we will look at the mathematical details (along with various python examples) of
 decision trees, its advantages and drawbacks. We will find that they are simple and very useful for
 interpretation. However, they typically are not competitive with the best supervised learning

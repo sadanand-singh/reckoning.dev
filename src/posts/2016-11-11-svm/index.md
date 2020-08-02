@@ -14,6 +14,10 @@ In this post we will explore a class of machine learning methods called
 [Support Vector Machines](https://en.wikipedia.org/wiki/Support_vector_machine) also known commonly
 as _SVM_.
 
+**Table of Contents**
+
+[toc]
+
 ## Introduction
 
 SVM is a [supervised machine learning](https://en.wikipedia.org/wiki/Supervised_learning) algorithm

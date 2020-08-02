@@ -29,6 +29,7 @@
     "markdown-it-anchor": "^5.0.2",
     "@iktakahiro/markdown-it-katex": "^4.0.0",
     "markdown-it-figure-caption": "^0.1.0",
+    "markdown-it-toc-done-right": "^4.1.0",
     "preact": "^8.4.2"
   },
   "devDependencies": {

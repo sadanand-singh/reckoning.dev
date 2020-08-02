@@ -12,6 +12,10 @@ of tree based models and the use of [bagging](/tree-based-models/#bootstrap-aggr
 reduce variance. We also looked at one of the most famous learning algorithms based on the idea of
 bagging- [random forests](/tree-based-models/#random-forest-models).
 
+**Table of Contents**
+
+[toc]
+
 In this post, we will look
 into the details of yet another type of tree-based learning algorithms:
 [boosted trees](https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/).

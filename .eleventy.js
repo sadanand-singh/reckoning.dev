@@ -68,13 +68,18 @@ module.exports = function (config) {
       .use(markdownItKatex, { throwOnError: false, errorColor: '#cc0000' })
       .use(markdownItAnchor, {
         permalink: true,
-        permalinkSymbol: '#',
+        permalinkSymbol: '§',
         permalinkClass: 'heading-anchor',
         permalinkBefore: true,
         level: 2,
         slugify: anchorSlugify,
       })
       .use(require('markdown-it-figure-caption'))
+      .use(require('markdown-it-toc-done-right'), {
+        level: 1,
+        listType: 'ul',
+        slugify: anchorSlugify,
+      })
   );
 
   // Collections: Navigation

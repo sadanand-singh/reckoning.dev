@@ -3,6 +3,7 @@ title: 'A Practical guide to Autoencoders using Keras'
 date: 2018-04-26
 tags:
   - DeepLearning
+  - Algorithms
 slug: autoencoders
 ---
 
@@ -12,6 +13,10 @@ a mapping from `x` to `x` if the network has no constraints, but if the network 
 learning process becomes more interesting.
 
 <!-- more -->
+
+**Table of Contents**
+
+[toc]
 
 In this article, we are going to take a detailed look at
 the mathematics of different types of autoencoders (with different constraints) along with a sample

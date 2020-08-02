@@ -23,6 +23,10 @@ Please see [my latest post](/blog/complete-setup-arch-gnome) on installing Arch 
 an upto date version of this guide.
 {% endcallout %}
 
+**Table of Contents**
+
+[toc]
+
 For all of you who love installation videos-
 
 https://youtu.be/MMkST5IjSjY

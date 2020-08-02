@@ -16,6 +16,10 @@ I am going to describe my hardware, OS, and different packages that I use. In pa
 the question, I found that the most of the interest have been around managing different python
 versions, and modules like pytorch/tensorflow libraries etc.
 
+**Table of Contents**
+
+[toc]
+
 ## Workstation Hadware
 
 Here are the configurations of my workstation:

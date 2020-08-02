@@ -10,6 +10,10 @@ In the previous post on [Support Vector Machines (SVM)](/blog/svm), we looked at
 details of the algorithm. In this post, I will be discussing the practical implementations of SVM
 for classification as well as regression.
 
+**Table of Contents**
+
+[toc]
+
 I will be using the
 [iris dataset](https://archive.ics.uci.edu/ml/datasets/iris) as an example for the classification
 problem, and a randomly generated data as an example for the regression problem.
