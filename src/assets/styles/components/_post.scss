@@ -26,6 +26,12 @@
     text-transform: uppercase;
     letter-spacing: 4px;
   }
+  &__tags2 {
+    font-family: Georgia, Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px;
+  }
   &__status {
     font-weight: 700;
     color: var(--color-secondary);

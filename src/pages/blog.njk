@@ -13,7 +13,7 @@ permalink: blog/index.html
     <br/>
         <strong>TAGS: </strong>
     {% for tagC in collections.tagList %}
-        <a href='/tags/{{ tagC.tag }}'><span class="post__tags p-category" style="color:{{ tagC.cls }}">#{{ tagC.tag }}</span></a>
+        <a class="post__tags2 p-category" style="color:{{ tagC.cls }}" href='/tags/{{ tagC.tag }}'><strong>#{{ tagC.tag }}</strong></a>
     {% endfor %}
     </header>
     <div class="page__content">
