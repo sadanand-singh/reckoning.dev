@@ -4,6 +4,7 @@ date: 2020-08-02
 tags:
   - Blog
 slug: digital-garden
+draft: true
 ---
 
-A real-life garden is usually a place where things grow. They are a source of food and substance.
+A real-life garden is usually a place where things grow.
