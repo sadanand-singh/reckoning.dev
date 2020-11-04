@@ -1,0 +1,59 @@
+---
+title: "About"
+date: 2020-11-03
+draft: false
+---
+
+## A little about me
+
+{{< image src="sadanand-about.jpeg" caption="Your host, Sadanand Singh" width="300" height="300" linked="false" >}}
+
+Hi, I'm **Sadanand Singh**. I build AI models in medical imaging and enjoy working with Algorithms,
+Python/C++, and medical and biological data. My background is in computational physics, numerical
+modeling and optimization and software design. I have a PhD in computational physics/chemical
+engineering focusing on computational models of nano-materials and bio-molecules.
+
+
+My active area of research is in applications of deep learning and computer vision in medical
+imaging and in the radiology business. I am specifically interested in designing AI models that are explainable and
+tractable.
+
+## Latest CV
+
+- [My Latest CV](/resume)
+
+## Currently Using
+
+- **Laptop:** [13-inch MacBook Pro Mid 2020](https://www.apple.com/shop/buy-mac/macbook-pro/13-inch-space-gray-2.0ghz-quad-core-processor-with-turbo-boost-up-to-3.8ghz-512gb#)
+- **Desktop:** [See my build](/mydlsetup/#workstation-hadware)
+- **Hosting:** [Netlify](https://netlify.com)
+- **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
+- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Deep Learning Library** [Pytorch](https://pytorch.org)
+
+## Publications
+
+- [Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
+- [A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams](https://arxiv.org/abs/2001.08383)
+- [A hypersensitive breast cancer detector](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
+- [Ultrastable glasses from in silico vapour deposition](https://www.nature.com/articles/nmat3521)
+- [Two-dimensional infrared spectroscopy reveals the complex behaviour of an amyloid fibril inhibitor](https://www.nature.com/articles/nchem.1293)
+- [2DIR spectroscopy of human amylin fibrils reflects stable β-sheet structure](https://pubs.acs.org/doi/abs/10.1021/ja204035k)
+- [Stable and metastable states of human amylin in solution](https://www.sciencedirect.com/science/article/pii/S0006349510008593)
+- [A molecular view of vapor deposited glasses](https://aip.scitation.org/doi/abs/10.1063/1.3586805)
+- [Density of states–based molecular simulations](https://www.annualreviews.org/doi/abs/10.1146/annurev-chembioeng-062011-081032)
+- [Flux tempered metadynamics](https://link.springer.com/article/10.1007/s10955-011-0301-0)
+- [Effect of proline mutations on the monomer conformations of amylin](https://www.sciencedirect.com/science/article/pii/S0006349513008473)
+- [α-helix to β-hairpin transition of human amylin monomer](https://aip.scitation.org/doi/abs/10.1063/1.4798460)
+- [Efficient free energy calculation of biomolecules from diffusion-biased molecular dynamics](https://pubs.acs.org/doi/abs/10.1021/ct3003755)
+- [Case study on tubular reactor hot-spot temperature control for throughput maximization](https://pubs.acs.org/doi/abs/10.1021/ie071287c)
+
+## Online
+
+<ul class="about__social">
+    <li><a href="https://twitter.com/reckoningdev"><i class="fab fa-twitter"></i>  Twitter</a></li>
+    <li><a href="https://github.com/sadanand-singh"><i class="fab fa-github"></i> Github</a></li>
+    <li><a href="https://stackoverflow.com/users/13244305/reckoningdev"><i class="fab fa-stack-overflow"></i> StackOverflow</a></li>
+    <li><a href="https://www.linkedin.com/in/sadanandsingh/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    <li><a href="https://keybase.io/reckoningdev"><i class="fab fa-keybase"></i> Keybase</a></li>
+</ul>
