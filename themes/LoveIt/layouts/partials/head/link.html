@@ -49,3 +49,8 @@
 {{- $source := $cdn.animateCSS | default "lib/animate/animate.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
+
+{{- /* Pure.css */ -}}
+{{- $source := "https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css" -}}
+{{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
+{{- partial "plugin/style.html" $style -}}
