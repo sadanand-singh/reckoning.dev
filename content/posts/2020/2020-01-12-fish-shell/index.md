@@ -24,16 +24,13 @@ improvements it makes on plain old bash are impressive. But as my needs change, 
 In this post, I will lay out my motivations for the switch, along with some details of my new
 configurations and all the gotchas that I had to endure!
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596257573/fish_ka9mxw.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596257573/fish_ka9mxw.jpg" >}}
 
 Fist, let me be very clear - I know that zsh+zprezto+zplug is really awesome, and you can almost
 certainly configure zsh to do almost everything that you with the fish shell - well, at least
 everything I am gonna describe in this post.
 
-{% callout "tip" %}
-
-**TL;DR**
-
+{{< admonition tip "TLDR" true >}}
 [fish](https://fishshell.com/) is a smart and user-friendly command line shell. This post is
 about things that make fish great, all the caveats, and the plugins that I use, hoping that might
 be useful to you as well! Some of my favorite fish features are:
@@ -41,8 +38,7 @@ be useful to you as well! Some of my favorite fish features are:
 - Inline auto-suggestions based on history
 - tab completion, and web-based configuration
 - Syntax Highlighting, and intuitive wildcard support
-
-{% endcallout %}
+{{< /admonition >}}
 
 ## Motivation
 
@@ -59,7 +55,7 @@ category of my favorite products. It comes with all the sane default features:
 
 Lets go into details of some of these features.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1579488640/fish_screenshot_vtfe0x.png)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1579488640/fish_screenshot_vtfe0x.png" >}}
 
 ### Speed
 
@@ -81,10 +77,7 @@ first letter. Left arrow to auto-suggestions and tab for auto-complete. worth me
 `alt+left` arrow to just take the first part of the suggestion and you can hit it until you get
 there!
 
-{% callout "info" %}
-
-**ALT key on OSX**
-
+{{< admonition info "ALT key on OSX" true >}}
 By Default ALT keys do not work properly on OSX. I had to add following key map in my iTerm 2
 profile to make it work properly in fish.
 
@@ -97,14 +90,13 @@ To move cursor to the start/end of the line
 
 - ⌘ + ← — Send Hex Codes: 0x01
 - ⌘ + → — Send Hex Codes: 0x05
-
-{% endcallout %}
+{{< /admonition >}}
 
 `fish` comes with a rich set of tab completions, that work "out of the box." Press Tab, and fish
 will attempt to complete the command, argument, or path. If there's more than one possibility, it
 will list them:
 
-```shell
+```shell {linenos=false}
 $git merge pr @key{Tab} → git merge prompt_designer
 
 $git checkout b @key{Tab}
@@ -122,7 +114,7 @@ valid file paths as you type them.
 
 `fish` supports the familiar wildcard \*. To list all JPG files:
 
-```shell
+```shell {linenos=false}
 $ ls *.JPEG
 lena.jpg
 meena.jpg
@@ -131,7 +123,7 @@ santa maria.jpg
 
 One can also use multiple wildcards.
 
-```shell
+```shell {linenos=false}
 $ ls l*.p*
 lena.png
 lesson.pdf
@@ -139,7 +131,7 @@ lesson.pdf
 
 Especially powerful is the recursive wildcard \*\* which searches directories recursively:
 
-```shell
+```shell {linenos=false}
 $ ls /var/**.log
 /var/log/system.log
 /var/run/sntp.log
@@ -156,14 +148,14 @@ the [documentation](https://fishshell.com/docs/current/index.html).
 Installing fish is as simple as installing something from any major package managers. On a Mac, you
 can install it via HomeBrew:
 
-```shell
+```shell {linenos=false}
 brew install fish
 ```
 
 In order to setup it as default shell, you have to edit `/etc/shells` file to add
 `/usr/local/bin/fish` as an entry to it (highlighted below in the codeblock):
 
-```bash/13
+```bash {linenos=false}
 # List of acceptable shells for chpass(1).
 # Ftpd will not allow users to connect who are not using
 # one of these shells.
@@ -181,7 +173,7 @@ In order to setup it as default shell, you have to edit `/etc/shells` file to ad
 
 Now you can change the default shell:
 
-```shell
+```shell {linenos=false}
 chsh -s /usr/local/bin/fish
 ```
 
@@ -193,7 +185,7 @@ reading further, if you wish to fine-tune fish further to your taste.
 The primary config file for `fish` (.bashrc/.zshrc equivalent) is located at
 `$HOME/.config/fish/config.fish`. You might have to create one to start with:
 
-```shell
+```shell {linenos=false}
 mkdir -p $HOME/.config/fish
 touch vim $HOME/.config/fish/config.fish
 ```
@@ -217,7 +209,7 @@ different systems effortlessly. A good summary of its features are:
 
 Installation is as simple as:
 
-```shell
+```shell {linenos=false}
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 ```
 
@@ -227,7 +219,7 @@ All options for fisher to mnage packages can be seen here in the following scree
 
 Here is a list of plugins that I use:
 
-```text
+```text {linenos=false}
 oh-my-fish/theme-bobthefish
 oh-my-fish/plugin-brew
 oh-my-fish/plugin-extract
@@ -247,7 +239,7 @@ sadanand-singh/fish-sodope
 tried to mimic in zprezto as well. Here this theme is a first class citizen. All I had to do was to
 add following modifications to my config.fish file:
 
-```text
+```text {linenos=false}
 set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
 set -g theme_display_git_stashed_verbose yes
@@ -283,7 +275,7 @@ comfort of your session.
 
 An example use case:
 
-```shell
+```shell {linenos=false}
 $ bax alias g=git
 $ g init
 Initialized empty Git repository in ~/Code/fish-bax/.git/
@@ -332,7 +324,7 @@ Following snippets shows all of my personal aliases.
 
 Alias for a short `ls` command using `l`:
 
-```bash
+```bash {linenos=false}
 function l
     ls -lh $argv
 end
@@ -340,13 +332,13 @@ end
 
 Alias to `nvim` using `vi` or `vim`:
 
-```bash
+```bash {linenos=false}
 function vi -d 'vi alias for nvim'
     nvim $argv
 end
 ```
 
-```bash
+```bash {linenos=false}
 function vim -d 'vi alias for nvim'
     nvim $argv
 end
@@ -439,7 +431,7 @@ This one is quite straight forward. In order to get `code` command working from 
 add VSCode to the path. The best way to add anything to path in fish shell is via the
 `fish_user_paths` variable.
 
-```shell
+```shell {linenos=false}
 set -U fish_user_paths $fish_user_paths "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/"
 ```
 
@@ -447,37 +439,31 @@ set -U fish_user_paths $fish_user_paths "/Applications/Visual Studio Code.app/Co
 
 Similarly, we can setup correct VARs as:
 
-```shell
+```shell {linenos=false}
 set -Ux PAGER less
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
 ```
-
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
 
 ### anaconda setup
 
 [anaconda](https://www.anaconda.com/) is my preferred way to setup python environment. Once
 installed, I had to add the main `conda` to the path via `fish_user_paths`:
 
-```shell
+```shell {linenos=false}
 set -U fish_user_paths "$HOME/opt/anaconda3/bin" $fish_user_paths
 ```
 
 Then enable fish shell integration by running the following command:
 
-```shell
+```shell {linenos=false}
 conda init fish
 ```
 
 The above command ends up modifying the `$HOME/.config/fish/config.fish` file by adding following
 to it:
 
-```text
+```text {linenos=false}
 # !! Contents within this block are managed by 'conda init' !!
 eval /Users/sadanand/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
 ```
@@ -487,7 +473,7 @@ happens since the PS1 setting `conda config --set changeps1 False` is ignored by
 
 The solution to this issue is to add following to your `$HOME/.config/fish/config.fish` file:
 
-```text
+```text {linenos=false}
 # kill the right prompt __conda_add_prompt 😠
 function __conda_add_prompt
 end
@@ -495,13 +481,13 @@ end
 
 As a final note, I also disbled the base env (similar as I had done in zsh):
 
-```shell
+```shell {linenos=false}
 conda config --set auto_activate_base false
 ```
 
 And, added a function to activate my personal env on demand:
 
-```bash
+```bash {linenos=false}
 function py36 -d 'activate py36-dev conda env'
     conda activate py36-dev
 end

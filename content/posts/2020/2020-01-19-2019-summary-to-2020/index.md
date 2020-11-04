@@ -16,7 +16,7 @@ And it's that time of year again! Most of you must have started planning for a b
 new decade. Keeping up with that spirit, this post is about my plans and expectations regarding
 this blog space for the upcoming new year.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596256784/2020_jdu0gt.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596256784/2020_jdu0gt.jpg" >}}
 
 Its been almost 5 years since I started this blog. Those of you who have been following me here,
 would be aware, this has not been easy to follow at all. With frequent changes in the design,
@@ -79,12 +79,6 @@ of my 2019:
 
 With the beginning of a new year, I want to make few new promises to myself. In no particular
 order, following are list of things I want to do/learn/complete in this year.
-
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
 
 **Things to do for this Blog:**
 

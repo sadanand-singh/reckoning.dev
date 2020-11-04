@@ -18,27 +18,25 @@ pace. If you have been following me here, you would know, I am all for new, and 
 
 <!-- more -->
 
-{% callout "warning" %}
+{{< admonition warning "Note" true >}}
 Note that since moving to [11ty](https://www.11ty.dev/), many of the codes and features described
 in this post will be broken. Please refer to my
 [archived github repo](https://github.com/sadanand-singh/reckoning.dev-V1) for any old code.
-{% endcallout %}
+{{< /admonition >}}
 
 I firmly believe in keeping myself up to date with latest trends so that I do not start lagging
 behind. With this philosophy, I have been following [gatsby themes] for some time now. Gatsby
 themes along with [mdx], [theme-ui] and [styled components], make up an ultimate
 [JAM stack](https://jamstack.org/) to build websites and blogs.
 
-{% callout "tip" %}
-
-**TL;DR**
+{{< admonition tip "TLDR" true >}}
 
 - Using [novela](https://github.com/narative/gatsby-theme-novela) as a starting point to start using gatsby themes, theme-ui and styled components.
 - **Several modifications:** tags, math rendering via katex, Table of Contents, Image Gallery, Scroll to top, next/previous posts, title of code blocks etc.
 - [gatsby cloud](https://www.gatsbyjs.com/cloud/) for fatster build and deployment.
 - Find all the modifications at [my github repo](https://github.com/sadanand-singh/reckoning.dev)
 
-{% endcallout %}
+{{< /admonition >}}
 
 Till now, I have been using an adhoc design based on one developed by [Tania Rascia][tania]. Making
 any changes to it was little cumbersome, including tracking down every css code across many files.
@@ -55,20 +53,10 @@ all the tools I have been interested in - mdx, theme-ui, and styled components!
 [theme-ui]: https://theme-ui.com/
 [styled components]: https://emotion.sh/docs/styled
 
-<div class="row">
-  <div class="column">
-  <figure class="extend">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/c_scale,w_640/v1586741108/novela/novela_light.png" alt="Snow" style="width:100%">
-    <figcaption>Light Theme</figcaption>
-    </figure>
-  </div>
-  <div class="column">
-  <figure class="extend">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/c_scale,w_640/v1586741108/novela/novela_dark.png" alt="Forest" style="width:100%">
-    <figcaption>Dark Theme</figcaption>
-    </figure>
-  </div>
-</div>
+{{< fluid_imgs
+  "pure-u-1-2|https://res.cloudinary.com/sadanandsingh/image/upload/c_scale,w_640/v1586741108/novela/novela_light.png|Light Theme|Light Theme"
+  "pure-u-1-2|https://res.cloudinary.com/sadanandsingh/image/upload/c_scale,w_640/v1586741108/novela/novela_dark.png|Dark Theme|Dark Theme"
+>}}
 
 The novela theme still lacked a lot of features that I needed. Some of the major lacking features
 were lack of tags, support of rendering math properly. I have been following their github repo
@@ -89,7 +77,7 @@ After cloning the master branch of the Novela repo, I merged the local branch fr
 I found this PR to be quite complete. Only change I had to make was to the CSS of the `TagBox`. I
 ended up adding some additional colors in theme-ui color definitions to support these.
 
-```jsx
+```js {linenos=false}
 ...
 const TagBox = styled.div`
   display: flow-root;
@@ -128,7 +116,7 @@ time, not at the build time. In all the files where `katex-display` class is mod
 global `document` variable, I had to add the conditional check of document not being undefined.
 (See the highlighted line in the codeblock.)
 
-```jsx/2
+```js
 //Change all KaTeX colors
 if (typeof document !== `undefined`) {
   Array.from(document.getElementsByClassName('katex-display')).forEach((element) => {
@@ -150,7 +138,7 @@ I enabled this by first enabling the `draft` field in the frontmatter by adding 
 Then, in `@narative/gatsby-theme-novela/src/gatsby/node/onCreateNode.js`, I added code to create
 new field for it (See the highlighted code below).
 
-```jsx/2-3,6-32
+```js {linenos==table,hl_lines=[2,"6-32"]}
 ...
 const moment = require('moment-timezone');
 require('dotenv');
@@ -196,7 +184,7 @@ if (node.internal.type === `Mdx` && source === contentPath) {
 Finally, in `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js` file, filter `articles`
 to the ones that are not drafts before creating pages.
 
-```jsx
+```js {linenos=false}
 ...
 const articlesThatArentDraft = articles.filter((article) => !article.draft);
 const articlesThatArentSecret = articlesThatArentDraft.filter((article) => !article.secret);
@@ -211,16 +199,10 @@ the ones with the least difference in post times from the current post get highe
 second rule ensures that posts around same dates are found to be more related than only the more
 recent ones.
 
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
-
 This involved only a little bit of javascript update in
 `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js`.
 
-```jsx
+```js {linenos=table}
 ...
 let OtherArticlesThatArentSecretSorted = articlesThatArentSecret
     .filter((art) => art !== article)
@@ -276,7 +258,7 @@ automatic list of headings along with its depth to help with creating `Table of 
 In the novela theme, I had to update the MDX component and the article template to achieve this. In
 the MDX component, I had to pass the headings parameter to the MDXRenderer.
 
-```jsx
+```js {linenos=false}
 <MDXProvider components={components}>
   <CustomBlockCSS>
     <MDXBody>
@@ -292,7 +274,7 @@ the MDX component, I had to pass the headings parameter to the MDXRenderer.
 Then in the article template, add additional graphql query to extract `headings` data from the
 current post. Here, I use `title` of the post to filter the current post.
 
-```jsx
+```js {linenos=false}
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($title: String!) {
@@ -340,7 +322,7 @@ Notice use of some extra CSS to disable scroll up button on small screens.
 I like to have links to the next and the previous posts on every regular posts. Creating this was
 as simple as adding context for these links in `createPages.js` gatsby node scripts.
 
-```jsx
+```js
 // next article
 let nextPage;
 if (index === 0) {
@@ -381,7 +363,7 @@ if (index === articlesThatArentDraft.length - 1) {
 Notice use of while loops to skip over any secret posts. Also, I had to explicitly disable those in
 the article template:
 
-```jsx
+```js
 {
   !article.secret && (
     <PaginationWrapper>
@@ -417,7 +399,7 @@ especially for TLDR and Update blocks. You can an example right at the top of th
 
 To enable this, at first I had to enable this plugin in gatsby-config.js file.
 
-```js
+```js {linenos=false}
 ...
 gatsbyRemarkPlugins: [
   {

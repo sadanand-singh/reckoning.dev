@@ -6,7 +6,7 @@ tags:
 slug: patient-will-see-you-now
 author: Sadanand
 lightgallery: true
-toc: true
+toc: false
 type: posts
 categories:
   - Books
@@ -17,27 +17,25 @@ to coughing people, increasing the risk of us getting sicker than we were in the
 
 <!-- more -->
 
-{% callout "tip" %}
-**TL;DR**
-
+{{< admonition tip "TLDR" true >}}
 A Review of [The Patient will See You Now](https://www.amazon.com/Patient-Will-See-You-Now/dp/0465040020) |
 Book by Dr. Eric Topol: Why new technology decreases the need for | hospitals; How an app can
 save us from a trip to the dermatologist and other doctors; and how | mobile phones will improve
 health care in the developing world!
-{% endcallout %}
+{{< /admonition >}}
 
 And, finally, when you get to see the Doctor, you usually get 15 minutes or less of face time and a
 prescription for an expensive medicine that might work if you are lucky. And all this only if you
 are lucky to live in a part of world with easy access to doctors.
 
-![xkcd awesomeness!](https://imgs.xkcd.com/comics/doctor_visit.png)
+{{< image src="https://imgs.xkcd.com/comics/doctor_visit.png" caption="Doctor's Visit!" width="1400px" >}}
 
 But future can be quite different! Technology is changing the way medicine is practiced. It is
 leading to a power shift and an overhaul in what has become today's medial industry. This book
 takes a deep dive look into this future, where tables are turned and we say: "The Patient will See
 You Now!"
 
-![The joke is on all of us my friend!](https://pbs.twimg.com/media/EQbAMUxUYAAvXec?format=jpg&name=small)
+{{< image src="https://pbs.twimg.com/media/EQbAMUxUYAAvXec?format=jpg&name=small" caption="Joke is on Us my Friends!" width="400px" >}}
 
 ## Smartphones for greater access to medical information
 
@@ -48,7 +46,7 @@ _SkinVision_ app, that allows one to send a photo of a skin lesion to a doctor w
 whether it is benign or not. And this is just the benigning. Microscopic scans will soon have such
 powerful zooms that we will be able to scan ourselves for certain types of bacteria.
 
-![Sounds Familiar, specially here in the US?](https://pbs.twimg.com/media/EQa_8yyUwAIHl-2?format=jpg&name=small)
+{{< image src="https://pbs.twimg.com/media/EQa_8yyUwAIHl-2?format=jpg&name=small" width="600px" caption="Sounds Familiar, specially here in the US?" >}}
 
 Mobile connections also provide people with greater access to health information. In 2013, over 630
 million people in Africa had cell phones, 93 million of which were smartphones. Even
@@ -98,7 +96,7 @@ conference calling and smart pillpoxes that track medication use will enable peo
 their heath from comfort of their homes.
 
 The high cost of health care will also be reduced. As we all know, Health care in the US is
-extremely overpriced. Some hospitals charge \$1200 for every \$100 of their total costs, and \$190
+extremely overpriced. Some hospitals charge `$1200` for every `$100` of their total costs, and `$190`
 billions is wasted in administrative costs each year. Few people in the medical world understand
 the severity of this problem. In fact, a 2014 survey of over 500 orthopedics found that they only
 accurately knew the price of commonly used devices less than 20% of the time.
@@ -117,7 +115,7 @@ Building certain parts of such human GIS are going to be easier than others. The
 layer is already fairly advanced because we can already monitor different processes like heart rate
 and eye pressure with commerically availabe portable sensors. Other layers like, genetic layer, are
 much more complicated. However, the cost of getting our genome sequenced has decreased
-dramatically: in 2004 it cost \$28 million, and in 2014 it cost less than \$1500! There is still
+dramatically: in 2004 it cost `$28 million`, and in 2014 it cost less than `$1500`! There is still
 ways to go. Each person's genome is made up of roughly 3.5 million variants, and roughly 19,000 of
 those variants can't be identified with modern technology. We will still need to invest a lot in
 the genetic studies before we can produce in-depth genomic layers for human GIS.
@@ -135,7 +133,7 @@ genetic makeup.
 
 Chronic illnesses are difficult to treat because they often can't be cured. Treatment focuses on
 managing their symptoms, so patients may suffer from symptoms their entire lives. Such chronic
-illnesses also drain medical resources. In fact, about 80% of the \$3 trillion dollars spent on
+illnesses also drain medical resources. In fact, about 80% of the `$3 trillion` dollars spent on
 health care every year in the US goes towards chronic illnesses.
 
 Big data has the power to change things. In the future, it may help us predict and prevent chronic

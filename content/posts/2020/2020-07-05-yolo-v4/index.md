@@ -17,7 +17,7 @@ Object detection is useful for understanding what's in an image, describing both
 image and where those objects are found. In general, there are two different approaches for this
 task –
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/object_detection.jpg)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/object_detection.jpg" caption="A typical object detection framework" >}}
 
 - **Two-stage** object-detection models – There are mainly two stages in these classification based
   algorithms. In the first stage, it will select a bunch of Region of Interest (ROI) in the image
@@ -43,10 +43,7 @@ object-detection model that can be quickly trained on standard GPU.
 Essentially, the object-detection neural network is usually composed of **three parts**. The
 authors named them **backbone**, **neck** and **head**.
 
-<figure class="extend">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/backbone.png" alt="backbone structure" loading="lazy" />
-  <figcaption>A typical backbone network</figcaption>
-</figure>
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/backbone.png" caption="A typical backbone network" >}}
 
 **Backbone** is usually deep architecture that was pre-trained on the ImageNet dataset without top
 layers. These are typically one of common CNN architectures like Resnet, VGGNet, Mobilenet etc.
@@ -60,7 +57,7 @@ and drawing bounding boxes around objects. Based on the type of the head, we can
 types of object-detection models described above. These layers can also be described in terms of
 dense predictors (one-stage detectors) or sparse predictors (two-stage detectors).
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/object_detection2.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/object_detection2.png" caption="Anatomy of Different Types of Detectors" >}}
 
 ## YOLO V3: An Overview
 
@@ -70,10 +67,7 @@ scales are combined via upsampling and concatenation. See the complete network d
 details. Finally, the "Head" is a series of conv layers for dense predictions of box regressions
 and classification scores.
 
-<figure class="extend">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolov3.png" alt="yolo v3 network" loading="lazy" />
-<figcaption><strong>Image Credits: </strong><a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b">https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b</a></figcaption>
-</figure>
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolov3.png" caption="<strong>Image Credits: </strong><a href='https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b'>https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b</a>" >}}
 
 ### Bounding Box Predictions
 
@@ -88,10 +82,7 @@ confidence, and C is the number of classes. In YOLO v3 trained on COCO, B = 3 an
 kernel size is 1 x 1 x 255. The feature map produced by this kernel has identical height and width
 of the previous feature map, and has detection attributes along the depth as described above.
 
-<figure class="extend">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolo-bbox.png" alt="yolo v3 network" loading="lazy" />
-<figcaption><strong>Image Credits: </strong><a href="https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/">https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/</a></figcaption>
-</figure>
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolo-bbox.png" caption="<strong>Image Credits: </strong><a href='https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/'>https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/</a>" >}}
 
 **The stride of the network, or a layer is defined as the ratio by which it downsamples the
 input.** In the following examples, I will assume we have an input image of size 416 x 416. YOLO v3
@@ -131,7 +122,7 @@ than some threshold (0.5) we ignore the prediction. It assigns one bounding box 
 ground truth object. If a bounding box prior is not assigned to a ground truth object it incurs no
 loss for coordinate or class predictions, only objectness.
 
-![Loss Calculation for YOLO](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolo-loss.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/yolo-loss.png" alt="Loss term" caption="Loss Function">}}
 
 The complete loss terms related to localization for YOLOv3 can be seen in the figure above. In
 summary, The network predicts 4 coordinates for each bounding box, $t_x$ , $t_y$ , $t_w$ , $t_h$.
@@ -139,15 +130,17 @@ If the cell is offset from the top left corner of the image by ($c_x$ , $c_y$) a
 prior has width and height $p_w$ , $p_h$, then the predictions correspond to:
 
 $$
-b_x = \sigma (t_x) + c_x \\
-b_y = \sigma (t_y) + c_y \\
-b_w = p_w e^{t_w} \\
-b_h = p_h e^{t_h}
+\begin{aligned}
+b_x &= \sigma (t_x) + c_x \cr
+b_y &= \sigma (t_y) + c_y \cr
+b_w &= p_w e^{t_w} \cr
+b_h &= p_h e^{t_h}
+\end{aligned}
 $$
 
 The localization loss is the sum of squared error loss on these terms. If the ground truth for some
-coordinate prediction is $\hat{t}_*$ , then gradient is the ground truth value (computed from the
-ground truth box) minus our prediction: $\hat{t}_* - t_*$. This ground truth value can be easily
+coordinate prediction is $\hat{t}\_\*$ , then gradient is the ground truth value (computed from the
+ground truth box) minus our prediction: $\hat{t}\_\* - t\_\*$. This ground truth value can be easily
 computed by inverting the equations above.
 
 ## YOLO V4 Modifications
@@ -182,7 +175,7 @@ Based on all of these, the architecture of YOLOv4 consists of the following upda
   Authors have further tweaked the regular PANet module, where they use "concatenation" instead of
   "addition" used in the original module.
 
-![YOLO version of Path Aggregation Network](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/pan-yolo.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231169/yolo-v4/pan-yolo.png" alt="YOLO version of Path Aggregation Network" caption="YOLO-v4 version of the Path Aggregation Network">}}
 
 - **Head**: Same as YOLOv3.
 
@@ -207,15 +200,9 @@ layers. Neighboring positions are highly correlated. So even some of the pixels 
 middle diagram below), the spatial information remains detectable. DropBlock regularization builds
 on a similar concept that works on convolution layers.
 
-![Regular Pixel Dropout vs DropBlock](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/dropblock.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/dropblock.png" caption="Regular Pixel Dropout vs DropBlock" >}}
 
 Instead of dropping individual pixels, a block of block_size × block_size of pixels is dropped.
-
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
 
 **Class label smoothing** acts as a regularizer, a typical formulation for it can be:
 
@@ -242,7 +229,7 @@ discussed FPN and PAN so far as examples. The diagram below shows another neck d
 that has better accuracy and efficiency trade-offs according to the
 [BiFPN paper](https://arxiv.org/pdf/1911.09070.pdf).
 
-![Different Variants of Pyramid Networks for Detection](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/bifpn.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/bifpn.png" caption="Different Variants of Pyramid Networks for Detection" >}}
 
 [EfficientDet](https://arxiv.org/abs/1911.09070) is considered as one of the most accurate object
 detectors. Hence, some of its features can be used to improve YOLO V4. EfficientDet uses the
@@ -280,7 +267,7 @@ IoU = \frac{|B \cap B^{gt}|}{|B \cup B^{gt}|}
 $$
 
 $$
-\mathcal{L}_{IoU} = 1 - \frac{|B \cap B^{gt}|}{|B \cup B^{gt}|}
+\mathcal{L}_{IoU} = 1 - \frac{ |B \cap B^{gt}| }{ |B \cup B^{gt}| }
 $$
 
 Where $B$ is the bounding box and $B^{gt}$ is the ground truth box.
@@ -288,7 +275,7 @@ Where $B$ is the bounding box and $B^{gt}$ is the ground truth box.
 [Generalized IoU (GIoU)](https://arxiv.org/abs/1902.09630) fixes this by refining the loss as:
 
 $$
-\mathcal{L}_{GIoU} = \mathcal{L}_{IoU} +  \frac{|C - B \cup B^{gt}|}{|C|}
+\mathcal{L}\_{GIoU} = \mathcal{L}\_{IoU} +  \frac{ |C - B \cup B^{gt}| }{ |C| }
 $$
 
 where $C$ is the smallest box covering $B$ and $B^{gt}$.
@@ -299,7 +286,7 @@ theoretically needed.
 
 First, [Distance-IoU Loss (DIoU)](https://arxiv.org/abs/1911.08287) was introduced as:
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/diou.jpg)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/diou.jpg" alt="" >}}
 
 It introduces a new goal to reduce the central points separation between the two boxes.
 
@@ -307,7 +294,7 @@ Finally, [Complete IoU Loss (CIoU)](https://arxiv.org/abs/1911.08287) was introd
 the overlapping area of the ground truth box and the predicted box, minimize their central point
 distance, and maintain the consistency of the boxes’ aspect ratio.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/ciou.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/ciou.jpg" alt="" >}}
 
 **Cross mini-batch Normalization (cmBN)**
 
@@ -319,7 +306,7 @@ under the new weight. A naive average will be wrong. Fortunately, weights change
 [Cross-Iteration Batch Normalization (CBM)](https://arxiv.org/abs/2002.05712), it estimates those
 statistics from k previous iterations with the adjustment, as described below:
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/cmbn.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/cmbn.jpg" alt="" >}}
 
 CmBN is a modified option that collects statistics only between mini-batches within a single batch.
 
@@ -337,7 +324,7 @@ generalize the model and to reduce overfitting.
 
 In YOLO, the bounding box $b$ is computed as:
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/box_calc.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/box_calc.jpg" alt="" >}}
 
 For the case $b_x = c_x$ and $b_x = c_x + 1$, we need $t_x$ to have a huge negative and positive
 value, respectively. But we can multiply $\sigma$ with a scaling factor (> 1.0) to make this happen
@@ -362,15 +349,15 @@ Attention has widely adopted in DL designs. In SAM, maximum pool and average poo
 separately to input feature maps to create two sets of feature maps. The results are feed into a
 convolution layer followed by a sigmoid function to create spatial attention.
 
-![A typical Spatial Attention Module](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/sam.jpg)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/sam.jpg" caption="A typical Spatial Attention Module" >}}
 
 This spatial attention mask is applied to the input feature to output the refined feature maps.
 
-![A typical Convolutional Spatial Attention Module](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/conv_sam.jpg)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231167/yolo-v4/conv_sam.jpg" caption="A typical Convolutional Spatial Attention Module" >}}
 
 In YOLOv4, a modified SAM is used without applying the maximum and average pooling.
 
-![YOLO V4 version of Spatial Attention Module](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/sam-yolo.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/sam-yolo.png" caption="YOLO V4 version of Spatial Attention Module" >}}
 
 In YOLOv4, the FPN concept is gradually implemented/replaced with the modified SPP, PAN, and SAM.
 
@@ -388,6 +375,6 @@ redundant boxes. This makes it more robust for the cases with occlusions.
 Comparing results with other detectors is pretty impressive! They outperform in terms of both speed
 and average precision scores.
 
-![Summary of Results](https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/yolo_results.png)
+{{< image src="https://res.cloudinary.com/sadanandsingh/image/upload/v1596231168/yolo-v4/yolo_results.png" caption="Summary of Results" >}}
 
 A not so thorough analysis of effects of different modifications can be found in the paper.

@@ -17,7 +17,7 @@ been working a lot on my MacBook Pro. In this post, I want to document my setup 
 my own future needs. I am always curious to see how other software developers are setting up their
 development machines so I figured it would be a good opportunity to share mine.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1580264539/2016_macbook_pro_opa89c.jpg)
+{{< figure src="https://res.cloudinary.com/sadanandsingh/image/upload/v1580264539/2016_macbook_pro_opa89c.jpg" >}}
 
 I am a research scientist in AI/Deep Learning and do some software development using Javascript,
 markdown, etc., so most of my configuration will be around programming. My current MacBook
@@ -89,7 +89,7 @@ colorschemas:
 Now, first thing I install is [HomeBrew](https://brew.sh/). Before you install HomeBrew though you
 need to install the `Xcode` command line utilities. Open a terminal in iTerm 2 and type:
 
-```shell
+```shell {linenos=false}
 xcode-select --install
 ```
 
@@ -98,7 +98,7 @@ from Xcode and that allows you to do command line development in OS X.
 
 Now, install HomeBrew:
 
-```shell
+```shell {linenos=false}
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -111,13 +111,13 @@ different machines. You can look at my
 
 I just run following command to install all desired things via brew:
 
-```shell
+```shell {linenos=false}
 brew bundle --file ~/.config/BrewFile
 ```
 
 You can save your current BrewFile at current directory using:
 
-```shell
+```shell {linenos=false}
 brew dump
 ```
 
@@ -136,12 +136,6 @@ Few other small configurations for iTerm include:
   to work properly for fish shell.
 
 ## Miscellaneous Setup
-
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
 
 Following are details of my other additional configurations:
 
@@ -162,15 +156,9 @@ BrewFile setup above installs git. My gitconfig can be found in my dot files rep
 First enable ssh server by checking System Preferences -> Sharing -> Remote Login. You can also
 update the system hostname here.
 
-{% signup "By the way..." %}
-I'm starting an email list for people interested in AI development and programming in general.
-If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post.
-No strings attached, unsubscribe anytime.
-{% endsignup %}
-
 If you do not have already from the older machine, new ssh keys can be generated as follows:
 
-```shell
+```shell {linenos=false}
 ssh-keygen -t rsa
 ```
 
