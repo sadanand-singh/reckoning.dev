@@ -1,0 +1,22 @@
+// ==============================
+// Custom style
+// ==============================
+
+.content {
+  margin-top: 2em;
+}
+
+.single .content figure {
+  margin-top: 2.0em;
+}
+
+.single .content figcaption h4, .single .content figcaption p {
+  font-size: .75em;
+  color: $global-font-secondary-color;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.single .content p {
+  margin-top: 1rem;
+}
