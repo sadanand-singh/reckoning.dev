@@ -47,11 +47,11 @@ theme = "LoveIt"
 	  weight = 4
 
 	[[menu.main]]
-	  identifier = "roam"
+	  identifier = "wiki"
 	  pre = ""
 	  post = ""
-	  name = "Roam"
-	  url = "/roam/"
+	  name = "Wiki"
+	  url = "/wiki/"
 	  title = ""
 	  weight = 5
 
@@ -80,11 +80,11 @@ theme = "LoveIt"
   #  App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "Baty.net"
+    title = "reckoning.dev"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
-    svgFavicon = ""
+    svgFavicon = "/img/logo.svg"
     # Android browser theme color
     themeColor = "#ffffff"
     # Safari mask icon color
@@ -123,15 +123,15 @@ theme = "LoveIt"
     #  Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "/img/logo.png"
+      logo = "/img/logo.svg"
       # title name
-      name = "Jack Baty's Weblog"
+      name = "  reckoning.dev"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       #  whether to use typeit animation for title name
-      typeit = false
+      typeit = true
 
   # Footer config
   [params.footer]
@@ -143,13 +143,13 @@ theme = "LoveIt"
     #  whether to show copyright info
     copyright = true
     #  whether to show the author
-    author = false
+    author = true
     # Site creation time
-    since = 2000
+    since = 2014
     # ICP info only in China (HTML format is supported)
     icp = ""
     # license info (HTML format is supported)
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license = '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>'
 
   #  Section (all posts) page config
   [params.section]
@@ -179,11 +179,11 @@ theme = "LoveIt"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/img/jack-headshot-96.jpg"
+      avatarURL = "/img/sadanand.jpeg"
       #  title shown in home page (HTML format is supported)
-      title = ""
+      title = "Sadanand Singh"
       # subtitle shown in home page
-      subtitle = "Jack Baty – Director of Unspecified Services"
+      subtitle = "Principal Research Scientist @whiterabbit.ai, Amateur Photographer, and Cook"
       # whether to use typeit animation for subtitle
       typeit = false
       # whether to show social links
@@ -201,10 +201,10 @@ theme = "LoveIt"
 
   # Social config about the author
   [params.social]
-    GitHub = "jackbaty"
-    Linkedin = ""
-    Twitter = "jackbaty"
-    Instagram = "mrjackbaty"
+    GitHub = "sadanand-singh"
+    Linkedin = "sadanandsingh"
+    Twitter = "reckoningdev"
+    Instagram = "nature.photons"
     Facebook = ""
     Telegram = ""
     Medium = ""
@@ -224,7 +224,7 @@ theme = "LoveIt"
     Weibo = ""
     Odnoklassniki = ""
     VK = ""
-    Flickr = "jbaty"
+    Flickr = ""
     Xing = ""
     Snapchat = ""
     Soundcloud = ""
@@ -263,7 +263,7 @@ theme = "LoveIt"
     XMPP = ""
     Matrix = ""
     Bilibili = ""
-    Email = "jbaty@hey.com"
+    Email = "reckoningdev@hey.com"
     RSS = true #
 
   #  Page config
@@ -334,7 +334,7 @@ theme = "LoveIt"
       enable = true
       Twitter = true
       Facebook = true
-      Linkedin = false
+      Linkedin = true
       Whatsapp = false
       Pinterest = false
       Tumblr = false
@@ -361,7 +361,7 @@ theme = "LoveIt"
       Mix = false
     #  Comment config
     [params.page.comment]
-      enable = true
+      enable = false
       # Disqus comment config
       [params.page.comment.disqus]
         #
@@ -416,7 +416,7 @@ theme = "LoveIt"
         outlined = false
       #  Commento comment config
       [params.page.comment.commento]
-        enable = true
+        enable = false
       #  Utterances comment config
       [params.page.comment.utterances]
         enable = false
@@ -482,10 +482,6 @@ theme = "LoveIt"
       # whether to anonymize IP
       anonymizeIP = true
     # Fathom Analytics
-    [params.analytics.fathom]
-      id = ""
-      # server url for your tracker if you're self hosting
-      server = ""
 
   #  Cookie consent config
   [params.cookieconsent]
@@ -543,8 +539,8 @@ theme = "LoveIt"
 
 # Author config
 [author]
-  name = "Jack"
-  email = "jbaty@hey.com"
+  name = "Sadanand"
+  email = "reckoningdev@hey.com"
   link = ""
 
 # Sitemap config
@@ -556,7 +552,7 @@ theme = "LoveIt"
 # Permalinks config
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = ":year/:slug"
+  posts = ":slug"
 
 # Privacy config
 [privacy]
