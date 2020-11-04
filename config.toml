@@ -361,13 +361,13 @@ theme = "LoveIt"
       Mix = false
     #  Comment config
     [params.page.comment]
-      enable = false
+      enable = true
       # Disqus comment config
       [params.page.comment.disqus]
         #
-        enable = false
+        enable = true
         # Disqus shortname to use Disqus in posts
-        shortname = ""
+        shortname = "sadanandsblog"
       # Gitalk comment config
       [params.page.comment.gitalk]
         #
