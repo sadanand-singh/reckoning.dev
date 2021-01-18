@@ -1,0 +1,31 @@
+{
+	"name": "vredeburg",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"clean": "rimraf dist",
+		"start": "npm run clean && cross-env NODE_ENV=development eleventy --serve",
+		"build": "npm run clean && cross-env NODE_ENV=production eleventy --serve",
+		"debug": "DEBUG=Eleventy* npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dafiulh/vredeburg.git"
+	},
+	"author": "Dafiul Haq",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dafiulh/vredeburg/issues"
+	},
+	"homepage": "https://github.com/dafiulh/vredeburg#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.11.1",
+		"@tailwindcss/typography": "^0.3.1",
+		"cross-env": "^7.0.3",
+		"eleventy-plugin-tailwindcss": "^0.3.0",
+		"html-minifier": "^4.0.0",
+		"luxon": "^1.24.1",
+		"rimraf": "^3.0.2",
+		"terser": "^4.8.0"
+	}
+}
