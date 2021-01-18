@@ -1,15 +1,19 @@
 [
     {
+        "label": "Blog",
+        "url": "/blog"
+    },
+    {
+        "label": "Notes",
+        "url": "/notes"
+    },
+    {
         "label": "About",
         "url": "/about"
     },
     {
-        "label": "Tag List",
-        "url": "/tags"
-    },
-    {
-        "label": "GitHub",
-        "url": "https://github.com/dafiulh/vredeburg",
+        "label": "Digital Garden",
+        "url": "https://wiki.reckoning.dev",
         "newTab": true
     }
 ]
