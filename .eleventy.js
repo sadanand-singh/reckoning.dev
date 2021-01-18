@@ -1,9 +1,51 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+/* Markdown Plugins */
+let markdownIt = require("markdown-it");
+let markdownItAnchor = require("markdown-it-anchor");
+let markdownItEmoji = require("markdown-it-emoji");
+let markdownItFootnote = require("markdown-it-footnote");
+let markdownItContainer = require("markdown-it-container");
+let markdownLinkifyImages = require('markdown-it-linkify-images')
+let markdownToc = require('markdown-it-table-of-contents')
+let markdownItTasks = require('markdown-it-task-lists')
+let markdownItAttrs = require("markdown-it-attrs")
+let markdownItCenterText = require("markdown-it-center-text")
+let options = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true
+};
+let opts = {
+  permalink: true,
+  permalinkClass: "direct-link",
+  permalinkSymbol: ""
+};
 
 module.exports = (config) => {
   config.addPlugin(pluginTailwind, {
     src: 'src/assets/css/*'
   });
+
+  config.addPlugin(syntaxHighlight);
+
+  config.setLibrary("md", markdownIt(options)
+    .use(markdownItAnchor, opts)
+    .use(markdownItEmoji)
+    .use(markdownItFootnote)
+    .use(markdownItContainer, 'callout')
+    .use(markdownItContainer, 'callout-blue')
+    .use(markdownItContainer, 'callout-pink')
+    .use(markdownItContainer, 'callout-green')
+    .use(markdownItContainer, 'warning')
+    .use(markdownItTasks)
+    .use(markdownItAttrs, {
+      includeLevel: [2,3],
+      listType: "ol"
+    })
+  );
 
   config.setDataDeepMerge(true);
 
