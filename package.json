@@ -24,8 +24,21 @@
 		"cross-env": "^7.0.3",
 		"eleventy-plugin-tailwindcss": "^0.3.0",
 		"html-minifier": "^4.0.0",
+		"markdown-it-anchor": "^5.3.0",
 		"luxon": "^1.24.1",
 		"rimraf": "^3.0.2",
-		"terser": "^4.8.0"
+		"terser": "^4.8.0",
+		"tailwindcss": "^2.0.2"
+	},
+	"dependencies": {
+		"markdown-it-attrs": "^3.0.3",
+		"markdown-it-center-text": "^1.0.4",
+		"markdown-it-container": "^3.0.0",
+		"markdown-it-emoji": "^2.0.0",
+		"markdown-it-footnote": "^3.0.2",
+		"markdown-it-for-inline": "^0.1.1",
+		"markdown-it-linkify-images": "^2.0.0",
+		"markdown-it-table-of-contents": "^0.5.0",
+		"markdown-it-task-lists": "^2.1.1"
 	}
 }

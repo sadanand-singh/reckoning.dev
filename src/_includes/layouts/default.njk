@@ -18,7 +18,7 @@
 {%- endset -%}
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,9 +39,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
-</head>	
+</head>
 
-<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+<body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 dark:bg-dark dark:border-gray-800 break-words">
     {% include "partials/header.njk" %}
     <main class="mx-7 lg:mx-6 mt-32 flex-grow">
         {% if layout === "post" %}
