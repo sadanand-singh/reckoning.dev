@@ -2,7 +2,7 @@
 title: "Typography"
 date: 2020-06-21T08:04
 thumb: "typography.png"
-tags: 
+tags:
     - popular
     - sample
 ---
@@ -61,6 +61,19 @@ func setCookie(cookie *http.Cookie, w interface{}) error {
 }
 ```
 
+```python
+def test():
+	print("Hello")
+
+teat()
+```
+
+callout:
+
+::: callout-blue
+*callout: yellow is the default color for a callout*
+:::
+
 This is blockquote, Will make it *better now*
 
 > 'I want to do with you what spring does with the cherry trees.' ~ Pablo Neruda
@@ -82,6 +95,9 @@ Ordered list
 ## Tables
 
 Tables aren't part of the core Markdown spec, but we supports supports them out-of-the-box.
+
+`assss`
+
 
 | Name 	| Age 	|
 | ----- | ----- |

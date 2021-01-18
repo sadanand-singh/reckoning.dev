@@ -1,16 +1,37 @@
 ---
 layout: default
-pagination:
-    data: collections.pagedPosts
-    size: 1
-    alias: paged
-permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}index.html"
+permalink: "index.html"
 ---
 
-<div class="flex flex-wrap -mx-2">
-    {% include "partials/post-grid.njk" %}
+<div class="flex flex-col items-center text-lg mt-10">
+    {% if author.avatar %}
+    <a href="{{ author.homepage | url }}" target="_blank" rel="noopener">
+        <img class="w-32 h-32 md:w-40 md:h-40 rounded-full" src="{{ author.avatar | url }}" width="128" height="128" alt="Author avatar">
+    </a>
+    {% endif %}
+    <div class="text-center mt-8">
+        <h1 class="text-2xl font-medium text-gray-800 dark:text-gray-500 leading-relaxed mt-0 mb-1">
+            <a href="{{ author.homepage | url }}" target="_blank" rel="noopener">{{ author.name }}</a>
+        </h1>
+        {% if author.bio %}
+        <p class="mt-3 text-gray-700 dark:text-gray-600">{{ author.bio }}</p>
+        {% endif %}
+        <div class="links">
+        <a href="https://github.com/sadanand-singh" title="GitHub" target="_blank" rel="noopener noreffer me">
+            <i class="fab fa-github-alt fa-fw"></i>
+        </a>
+        <a href="https://linkedin.com/in/sadanandsingh" title="LinkedIn" target="_blank" rel="noopener noreffer me">
+            <i class="fab fa-linkedin fa-fw"></i>
+        </a>
+        <a href="https://twitter.com/reckoningdev" title="Twitter" target="_blank" rel="noopener noreffer me">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+        <a href="https://www.instagram.com/nature.photons" title="Instagram" target="_blank" rel="noopener noreffer me">
+            <i class="fab fa-instagram fa-fw"></i>
+        </a>
+        <a href="mailto:reckoningdev@hey.com" title="Email" rel="me">
+            <i class="far fa-envelope fa-fw"></i>
+        </a>
+        </div>
+    </div>
 </div>
-
-{% if collections.posts.length > site.paginate %}
-{% include "partials/paginator.njk" %}
-{% endif %}

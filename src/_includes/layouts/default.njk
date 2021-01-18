@@ -38,10 +38,13 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="{{ '/assets/css/prism-dracula.css' | url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 </head>
 
-<body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 dark:bg-dark dark:border-gray-800 break-words">
+<body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-400 dark:bg-dark dark:border-gray-800 break-words">
     {% include "partials/header.njk" %}
     <main class="mx-7 lg:mx-6 mt-32 flex-grow">
         {% if layout === "post" %}

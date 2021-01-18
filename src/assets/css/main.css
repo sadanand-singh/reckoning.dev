@@ -8,19 +8,12 @@
             sans-serif;
     }
 
-    /* Set up some default image behavior for nicer images */
-    img {
-        @apply w-auto  shadow-md border-2 border-transparent !important;
-    }
-    img:hover {
-        @apply border-2 border-gray-100;
-    }
     /* Overrides for Tailwind Typography prose class */
     .prose a {
-        @apply dark:text-gray-400;
+        @apply dark:text-gray-500;
     }
     .prose a:hover {
-        @apply dark:text-gray-500;
+        @apply dark:text-gray-600;
     }
     .prose h1,
     .prose h2,
@@ -28,8 +21,11 @@
     .prose h4,
     .prose h5,
     .prose h6 .prose hr,
+    .prose table,
+    .prose thead,
+    .prose th .prose tr,
     .prose strong {
-        @apply dark:text-gray-400;
+        @apply dark:text-gray-500;
     }
     .prose h2,
     .prose h3,
@@ -38,66 +34,77 @@
     .prose h6 {
         scroll-margin-top: 3.5em;
     }
-    .prose pre code {
-        @apply overflow-x-auto !important;
-    }
-    .prose .footer-nav a {
-        @apply no-underline !important;
-    }
-    .prose ul.contains-task-list,
-    .prose ul.spacelog {
-        @apply list-none -ml-6 !important;
-    }
-    .prose ul.contains-task-list .task-list-item,
-    .prose ul.spacelog {
-        ::before {
-            @apply hidden !important;
-        }
+
+    .prose p code {
+        @apply text-pink-400 dark:text-pink-400;
     }
 
-    /* Define blockquotes and some standard callout blocks */
-    blockquote {
-        @apply rounded-lg p-4 bg-gray-100 dark:bg-gray-500 border-gray-200 border-l-8 dark:border-gray-700;
+    .prose td code {
+        @apply text-pink-400 dark:text-pink-400;
     }
+
+    .prose p code::before {
+        content: '';
+    }
+
+    .prose p code::after {
+        content: '';
+    }
+
+    .prose td code::before {
+        content: '';
+    }
+
+    .prose td code::after {
+        content: '';
+    }
+
+    .links {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        @apply dark:text-gray-500 mt-4;
+    }
+
+    /* Define some standard callout blocks */
     .callout {
-        @apply px-8 py-4 mb-4 rounded-lg bg-yellow-50;
+        @apply px-8 py-4 mb-4 rounded-lg bg-yellow-200;
     }
     .callout,
     .callout strong,
     .callout em {
-        @apply dark:bg-gray-400 dark:text-gray-900;
+        @apply dark:bg-yellow-400 dark:text-gray-900;
     }
     .callout-blue {
-        @apply px-8 py-4 mb-4 rounded-lg bg-blue-50;
+        @apply px-8 py-4 mb-4 rounded-lg bg-blue-200;
     }
     .callout-blue,
     .callout-blue strong,
     .callout-blue em {
-        @apply dark:text-gray-200 dark:bg-blue-900;
+        @apply dark:text-gray-200 dark:bg-blue-500;
     }
     .callout-pink {
-        @apply px-8 py-4 mb-4 rounded-lg bg-pink-50;
+        @apply px-8 py-4 mb-4 rounded-lg bg-pink-200;
     }
     .callout-pink,
     .callout-pink strong,
     .callout-pink em {
-        @apply dark:text-gray-200 dark:bg-pink-900;
+        @apply dark:text-gray-200 dark:bg-pink-500;
     }
     .callout-green {
-        @apply px-8 py-4 mb-4 rounded-lg bg-green-50;
+        @apply px-8 py-4 mb-4 rounded-lg bg-green-200;
     }
     .callout-green,
     .callout-green strong,
     .callout-green em {
-        @apply dark:text-gray-200 dark:bg-green-900;
+        @apply dark:text-gray-200 dark:bg-green-500;
     }
     .warning {
-        @apply px-8 py-4 mb-4 rounded-lg bg-red-800 text-gray-50;
+        @apply px-8 py-4 mb-4 rounded-lg bg-red-400 text-gray-50;
     }
     .warning,
     .warning strong,
     .warning em {
-        @apply text-gray-50 dark:bg-red-900  dark:text-gray-200;
+        @apply text-gray-50 dark:bg-red-700  dark:text-gray-200;
     }
 }
 
