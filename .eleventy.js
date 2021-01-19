@@ -59,6 +59,7 @@ module.exports = (config) => {
 
   config.addFilter('readableDate', require('./lib/filters/readableDate'));
   config.addFilter('minifyJs', require('./lib/filters/minifyJs'));
+  config.addFilter('relatedPosts', require('./lib/filters/related'));
 
   config.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
 
