@@ -59,6 +59,13 @@
         content: '';
     }
 
+    .note a {
+        @apply text-pink-500;
+    }
+    .note a:hover {
+        @apply text-pink-600;
+    }
+
     .links {
         padding: 0.5rem;
         font-size: 1.5rem;
