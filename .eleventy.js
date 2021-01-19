@@ -7,11 +7,9 @@ let markdownItAnchor = require("markdown-it-anchor");
 let markdownItEmoji = require("markdown-it-emoji");
 let markdownItFootnote = require("markdown-it-footnote");
 let markdownItContainer = require("markdown-it-container");
-let markdownLinkifyImages = require('markdown-it-linkify-images')
-let markdownToc = require('markdown-it-table-of-contents')
 let markdownItTasks = require('markdown-it-task-lists')
 let markdownItAttrs = require("markdown-it-attrs")
-let markdownItCenterText = require("markdown-it-center-text")
+
 let options = {
   html: true,
   breaks: true,
@@ -41,6 +39,10 @@ module.exports = (config) => {
     .use(markdownItContainer, 'callout-green')
     .use(markdownItContainer, 'warning')
     .use(markdownItTasks)
+    .use(require('@iktakahiro/markdown-it-katex'), {
+      "throwOnError" : false,
+      "errorColor" : " #cc0000"
+    })
     .use(markdownItAttrs, {
       includeLevel: [2,3],
       listType: "ol"
