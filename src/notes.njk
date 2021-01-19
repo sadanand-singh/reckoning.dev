@@ -1,0 +1,16 @@
+---
+layout: default
+pagination:
+    data: collections.pagedNotes
+    size: 1
+    alias: paged
+permalink: "{% if paged.number > 1 %}note/{{ paged.number }}/{% endif %}notes/"
+---
+
+<div class="flex flex-wrap -mx-2">
+    {% include "partials/note-grid.njk" %}
+</div>
+
+{% if collections.notes.length > site.notesPerPage %}
+{% include "partials/paginator.njk" %}
+{% endif %}

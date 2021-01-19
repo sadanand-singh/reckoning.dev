@@ -63,8 +63,10 @@ module.exports = (config) => {
   config.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
 
   config.addCollection('posts', require('./lib/collections/posts'));
+  config.addCollection('notes', require('./lib/collections/notes'));
   config.addCollection('tagList', require('./lib/collections/tagList'));
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
+  config.addCollection('pagedNotes', require('./lib/collections/pagedNotes'));
   config.addCollection('pagedPostsByTag', require('./lib/collections/pagedPostsByTag'));
 
   return {
