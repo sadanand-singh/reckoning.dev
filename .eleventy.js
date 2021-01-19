@@ -12,7 +12,7 @@ let markdownItAttrs = require("markdown-it-attrs")
 
 let options = {
   html: true,
-  breaks: true,
+  breaks: false,
   linkify: true,
   typographer: true
 };
