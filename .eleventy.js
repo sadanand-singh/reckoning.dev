@@ -58,6 +58,7 @@ module.exports = (config) => {
 
   config.addLayoutAlias('default', 'layouts/default.njk');
   config.addLayoutAlias('post', 'layouts/post.njk');
+  config.addLayoutAlias('page', 'layouts/page.njk');
 
   config.addFilter('readableDate', require('./lib/filters/readableDate'));
   config.addFilter('minifyJs', require('./lib/filters/minifyJs'));

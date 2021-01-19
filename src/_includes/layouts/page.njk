@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+        <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 dark:text-gray-100 mt-0 mb-3">{{ title }}</h1>
+        {% if thumb %}
+        <div class="mt-10 -mx-7 md:mx-0">
+            <img class="w-full max-w-2xl mx-auto" src="{{ thumb | url }}" width="960" height="500" alt="This post thumbnail">
+        </div>
+        {% endif %}
+    </header>
+    <div id="content" class="prose text-gray-800 dark:text-gray-400 max-w-none mb-10">
+        {{ content | safe }}
+    </div>
+
+  </div>
+    {% if comments %}
+    <div class="mt-10">
+    <script src="https://utteranc.es/client.js"
+            repo="sadanand-singh/reckoning.dev.comments"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async >
+    </script>
+    <noscript>Please enable JavaScript to view the comments powered by Utterances.</a></noscript>
+    </div>
+    {% endif %}
+</article>
