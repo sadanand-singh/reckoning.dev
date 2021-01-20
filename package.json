@@ -23,6 +23,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
 		"@iktakahiro/markdown-it-katex": "^4.0.1",
 		"@tailwindcss/typography": "^0.3.1",
+		"axios": "^0.21.1",
 		"cross-env": "^7.0.3",
 		"eleventy-plugin-tailwindcss": "^0.3.0",
 		"html-minifier": "^4.0.0",
