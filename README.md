@@ -1,44 +1,14 @@
-# Vredeburg
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a1d36fc9-4471-4679-902c-337449ccb59d/deploy-status)](https://app.netlify.com/sites/vredeburg/deploys)
+# reckoning.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/410a4404-3fb7-4501-8874-855ae2537cc4/deploy-status)](https://app.netlify.com/sites/reckoningdev/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-A simple starter project to create a blog using Eleventy and Tailwind CSS
+Source code for [reckoning.dev](https://reckoning.dev), my personal website, built with [Eleventy](https://11ty.dev/) and [Tailwind CSS](https://tailwindcss.com/).
 
-<details>
-  <summary>Screenshot</summary>
-  
-  ![](https://i.imgur.com/wGj2YZD.jpg)
-</details>
+## Features
 
-See demo [here](https://vredeburg.netlify.app)!
-
-## Getting Started
-1. Clone this repository
-```bash
-git clone https://github.com/dafiulh/vredeburg.git blog-name
-```
-2. Navigate to the directory
-```bash
-cd blog-name
-```
-3. Install dependencies
-```bash
-npm install
-```
-
-### Use in development
-```bash
-npm start
-```
-
-### Build for production
-```bash
-npm run build
-```
-
-### For debugging purposes
-```bash
-npm run debug
-```
-
-## Configuration
-To change the title, description, author data, menu/nav item, etc, go to `src/_data/`.
+- A modified version of the [vredeburg](https://github.com/dafiulh/vredeburg) starter.
+- Support for related posts
+- A notes pages
+- Support for dark/light theme toggle
+- Additional shortcuts like wrap, columns etc.
+- Comments using Github via [utteranc.es](https://utteranc.es/)
+- Additional Markdown features like support for markdown, heading anchor links etc.
+- Code highlighting support via [PrismJ](Shttps://prismjs.com/)
