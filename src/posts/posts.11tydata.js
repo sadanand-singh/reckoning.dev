@@ -2,7 +2,14 @@ module.exports = {
   layout: 'post',
   title: 'Untitled',
   eleventyComputed: {
-    permalink: (data) => `${data.page.fileSlug}/index.html`,
+    permalink: (data) => {
+      if (data.slug) {
+        return `${data.slug}/index.html`;
+        }
+        else {
+          return `${data.page.fileSlug}/index.html`
+        }
+    },
     thumb: (data) => {
       if (data.thumb) {
         if (data.thumb.search(/^https?:\/\//) !== -1) {
