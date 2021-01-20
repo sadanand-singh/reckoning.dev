@@ -8,6 +8,10 @@
             sans-serif;
     }
 
+    .wrapper > p:first-of-type {
+        @apply p-0 m-0;
+    }
+
     /* Overrides for Tailwind Typography prose class */
     .prose img {
         @apply w-full max-w-2xl mx-auto;
