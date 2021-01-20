@@ -9,6 +9,9 @@
     }
 
     /* Overrides for Tailwind Typography prose class */
+    .prose img {
+        @apply w-full max-w-2xl mx-auto;
+    }
     .prose a {
         @apply dark:text-gray-500;
     }
@@ -103,7 +106,7 @@
     .callout-green,
     .callout-green strong,
     .callout-green em {
-        @apply dark:text-gray-200 dark:bg-green-500;
+        @apply dark:text-gray-200 dark:bg-green-700;
     }
     .warning {
         @apply px-8 py-4 mb-4 rounded-lg bg-red-400 text-gray-50;

@@ -10,6 +10,15 @@ let markdownItContainer = require("markdown-it-container");
 let markdownItTasks = require('markdown-it-task-lists')
 let markdownItAttrs = require("markdown-it-attrs")
 
+const anchorSlugify = (s) =>
+  encodeURIComponent(
+    String(s)
+        .trim()
+        .toLowerCase()
+        .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+        .replace(/\s+/g, '-')
+  );
+
 let options = {
   html: true,
   breaks: false,
@@ -18,8 +27,11 @@ let options = {
 };
 let opts = {
   permalink: true,
-  permalinkClass: "direct-link",
-  permalinkSymbol: ""
+  permalinkSymbol: '#',
+  permalinkClass: 'heading-anchor',
+  permalinkBefore: true,
+  level: 2,
+  slugify: anchorSlugify,
 };
 
 module.exports = (config) => {
