@@ -22,17 +22,17 @@ tractable.
 
 ## Currently Using
 
-- **Laptop:** [13-inch MacBook Pro Mid 2020](https://www.apple.com/shop/buy-mac/macbook-pro/13-inch-space-gray-2.0ghz-quad-core-processor-with-turbo-boost-up-to-3.8ghz-512gb#)
+- **Laptop:** [13-inch M1 MacBook Pro](https://www.apple.com/macbook-pro/)
 - **Desktop:** [See my build](/mydlsetup/#workstation-hadware)
 - **Hosting:** [Netlify](https://netlify.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
-- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Static Site Generator:** [Eleventy](https://11ty.dev)
 - **Deep Learning Library** [Pytorch](https://pytorch.org)
 
 ## Publications
 
 - [Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
-- [A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams](https://arxiv.org/abs/2001.08383)
+- [A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams](https://pubs.rsna.org/doi/10.1148/ryai.2020200015)
 - [A hypersensitive breast cancer detector](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
 - [Ultrastable glasses from in silico vapour deposition](https://www.nature.com/articles/nmat3521)
 - [Two-dimensional infrared spectroscopy reveals the complex behaviour of an amyloid fibril inhibitor](https://www.nature.com/articles/nchem.1293)
@@ -45,9 +45,6 @@ tractable.
 - [α-helix to β-hairpin transition of human amylin monomer](https://aip.scitation.org/doi/abs/10.1063/1.4798460)
 - [Efficient free energy calculation of biomolecules from diffusion-biased molecular dynamics](https://pubs.acs.org/doi/abs/10.1021/ct3003755)
 - [Case study on tubular reactor hot-spot temperature control for throughput maximization](https://pubs.acs.org/doi/abs/10.1021/ie071287c)
-
-
-
 
 ## Online
 <ul class="about__social">

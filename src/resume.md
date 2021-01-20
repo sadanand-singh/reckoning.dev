@@ -7,7 +7,7 @@ permalink: resume/index.html
 
 ## AI Research Scientist
 
-More than 6 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments. Proficient in Python, C++ and Linux.
+More than 8 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments. Proficient in Python, C++ and Linux.
 
 - [reckoning.dev](https://reckoning.dev)
 - [me@reckoning.dev](mailto:mrg6nm2ji@relay.firefox.com)
@@ -69,7 +69,7 @@ More than 6 years of experience with deep learning, machine learning, numerical 
 ## Accomplishments
 
 - Six Intel Achievement Awards
-- 10 publications in the highest profile journals including [Nature Materials](https://www.nature.com/articles/nmat3521) and [Nature Chemistry](https://www.nature.com/articles/nchem.1293)
+- 10+ publications in the highest profile journals including [Nature Materials](https://www.nature.com/articles/nmat3521) and [Nature Chemistry](https://www.nature.com/articles/nchem.1293)
 - Work on ultra-stable glasses covered in regular media [Source 1](https://phys.org/news/2013-01-reveals-ordinary-glass-extraordinary-properties.html) [Source 2](https://www.redorbit.com/news/science/1113407994/new-type-of-glass-demonstrates-molecular-order-082115/)
 - Work on diabetes protein structure molding highlighted in media [Source](https://cen.acs.org/articles/91/i46/Unfolding-Diabetes.html)
 - Received one of the swiftest promotion in less than 3 years at Intel Corp. 2016
