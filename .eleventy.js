@@ -1,5 +1,7 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const shortcodes = require('./lib/shortcodes/shortcodes.js')
+const pairedshortcodes = require('./lib/shortcodes/paired_shortcodes.js')
 
 /* Markdown Plugins */
 let markdownIt = require("markdown-it");
@@ -40,6 +42,25 @@ module.exports = (config) => {
   });
 
   config.addPlugin(syntaxHighlight);
+
+  /**
+	 * Shortcodes
+	 * @link https://www.11ty.io/docs/shortcodes/
+	 */
+	Object.keys(shortcodes).forEach((shortcodeName) => {
+		config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+	})
+
+	/**
+	 * Paired Shortcodes
+	 * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
+	 */
+	Object.keys(pairedshortcodes).forEach((shortcodeName) => {
+		config.addPairedShortcode(
+			shortcodeName,
+			pairedshortcodes[shortcodeName]
+		)
+	})
 
   config.setLibrary("md", markdownIt(options)
     .use(markdownItAnchor, opts)

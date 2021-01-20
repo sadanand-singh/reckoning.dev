@@ -26,7 +26,7 @@ an up to date version of this guide.
 
 For all of you who love installation videos-
 
-youtube MMkST5IjSjY
+{% youtube "MMkST5IjSjY" %}
 
 I will cover this in two parts. First in this post, I will install the base system. Then, in a
 [follow up post](/plasma-install-guide), I will discuss details of setting up final working Plasma 5 desktop.
