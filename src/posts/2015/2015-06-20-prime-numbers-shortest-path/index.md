@@ -2,7 +2,7 @@
 title: 'Two Simple Math Puzzles: Prime Numbers and Shortest Path'
 slug: prime-numbers-shortest-path
 date: 2015-06-20
-thumb: shortest_path.png/
+thumb: shortest_path.png
 tags:
   - Algorithms
 ---
