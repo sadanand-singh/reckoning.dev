@@ -31,8 +31,9 @@ tractable.
 
 ## Publications
 
-- [Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
+- [An improved mammography malignancy model withself-supervised learning](https://spie.org/MI/conferencedetails/computer-aided-diagnosis?SSO=1#session-7)
 - [A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams](https://pubs.rsna.org/doi/10.1148/ryai.2020200015)
+- [Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
 - [A hypersensitive breast cancer detector](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
 - [Ultrastable glasses from in silico vapour deposition](https://www.nature.com/articles/nmat3521)
 - [Two-dimensional infrared spectroscopy reveals the complex behaviour of an amyloid fibril inhibitor](https://www.nature.com/articles/nchem.1293)
@@ -47,6 +48,7 @@ tractable.
 - [Case study on tubular reactor hot-spot temperature control for throughput maximization](https://pubs.acs.org/doi/abs/10.1021/ie071287c)
 
 ## Online
+
 <ul class="about__social">
     <li><a href="{{ author.social.twitter.url }}">Twitter</a></li>
     <li><a href="{{ author.social.github.url }}">Github</a></li>
