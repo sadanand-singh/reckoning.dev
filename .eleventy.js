@@ -44,23 +44,23 @@ module.exports = (config) => {
   config.addPlugin(syntaxHighlight);
 
   /**
-	 * Shortcodes
-	 * @link https://www.11ty.io/docs/shortcodes/
-	 */
-	Object.keys(shortcodes).forEach((shortcodeName) => {
-		config.addShortcode(shortcodeName, shortcodes[shortcodeName])
-	})
+   * Shortcodes
+   * @link https://www.11ty.io/docs/shortcodes/
+   */
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+  })
 
-	/**
-	 * Paired Shortcodes
-	 * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
-	 */
-	Object.keys(pairedshortcodes).forEach((shortcodeName) => {
-		config.addPairedShortcode(
-			shortcodeName,
-			pairedshortcodes[shortcodeName]
-		)
-	})
+  /**
+   * Paired Shortcodes
+   * @link https://www.11ty.dev/docs/languages/nunjucks/#paired-shortcode
+   */
+  Object.keys(pairedshortcodes).forEach((shortcodeName) => {
+    config.addPairedShortcode(
+      shortcodeName,
+      pairedshortcodes[shortcodeName]
+    )
+  })
 
   config.setLibrary("md", markdownIt(options)
     .use(markdownItAnchor, opts)
