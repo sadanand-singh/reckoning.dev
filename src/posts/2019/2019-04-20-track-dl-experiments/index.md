@@ -241,7 +241,7 @@ a tabular view with min/max of different metrics, code, parameters etc. By defau
 individual plots for losses and metric for train and test modes. However, you can create your own
 set of plots. Here, I created plots to compare test/train accuracy and losses.
 
-{% wrap "text-green-700 font-bold" %}
+{% wrap "text-teal-800 font-bold" %}
 This is a quite good model. We are getting 99% test accuracy with so little training.
 {% endwrap %}
 
