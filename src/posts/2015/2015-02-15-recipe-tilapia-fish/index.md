@@ -2,6 +2,7 @@
 title: 'Tilapia Fish Recipe'
 slug: 'recipe-tilapia-fish'
 date: 2015-02-15
+thumb: tilapia.jpg
 tags:
   - Recipe
 ---

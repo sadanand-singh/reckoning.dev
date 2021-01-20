@@ -2,13 +2,12 @@
 title: 'Two Simple Math Puzzles: Prime Numbers and Shortest Path'
 slug: prime-numbers-shortest-path
 date: 2015-06-20
+thumb: shortest_path.png/
 tags:
   - Algorithms
 ---
 
 Here are two math puzzles, solve, comment and enjoy the discussion!
-
-<!--more-->
 
 ## Puzzle 1: Prime Numbers
 

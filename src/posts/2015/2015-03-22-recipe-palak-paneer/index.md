@@ -2,6 +2,7 @@
 title: 'Palak Paneer Recipe'
 slug: 'recipe-palak-paneer'
 date: 2015-03-22
+thumb: palak_paneer.jpg
 tags:
   - Recipe
 ---

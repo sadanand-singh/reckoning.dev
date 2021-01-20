@@ -2,6 +2,7 @@
 title: 'Shortest Non-repeating Substring'
 slug: 'shortest-substring'
 date: 2015-01-27
+thumb: ds.jpg
 tags:
   - Algorithms
 ---

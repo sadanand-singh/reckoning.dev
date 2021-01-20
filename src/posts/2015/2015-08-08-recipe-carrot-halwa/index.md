@@ -2,6 +2,7 @@
 title: 'Carrot Halwa Recipe'
 slug: 'recipe-carrot-halwa'
 date: 2015-08-08
+thumb: carrot_halwa.jpg
 tags:
   - Recipe
 ---

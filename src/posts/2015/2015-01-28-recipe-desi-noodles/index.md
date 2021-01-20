@@ -2,6 +2,7 @@
 title: 'Indian Vermicelli Recipe'
 slug: 'recipe-desi-noodles'
 date: 2015-01-28
+thumb: vermicelli.jpg
 tags:
   - Recipe
 ---

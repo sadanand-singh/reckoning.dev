@@ -4,6 +4,7 @@ slug: 'recipe-laal-saag'
 date: 2015-01-26
 tags:
   - Recipe
+thumb: amaranth.jpg
 ---
 
 I have started eating a lot of greens these days. As a kid, I always loved a vegetable made by my

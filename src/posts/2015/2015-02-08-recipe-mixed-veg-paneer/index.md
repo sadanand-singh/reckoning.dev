@@ -2,6 +2,7 @@
 title: 'Mix-Veg Paneer Recipe'
 slug: 'recipe-mixed-veg-paneer'
 date: 2015-02-08
+thumb: paneer.jpg
 tags:
   - Recipe
 ---

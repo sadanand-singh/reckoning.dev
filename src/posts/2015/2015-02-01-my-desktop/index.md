@@ -2,6 +2,7 @@
 title: 'My New Desktop'
 slug: my-desktop
 date: 2015-02-01
+thumb: desktop.jpg
 tags:
   - Linux
   - Guides

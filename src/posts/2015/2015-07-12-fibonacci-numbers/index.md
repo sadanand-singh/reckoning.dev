@@ -2,6 +2,7 @@
 title: "Moore's Law and Algorithms - Case of Fibonacci Numbers"
 slug: 'fibonacci-numbers'
 date: 2015-07-12
+thumb: fibonacci_sequence.jpg
 tags:
   - 'Algorithms'
 ---

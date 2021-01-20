@@ -2,6 +2,7 @@
 title: 'Plasma 5 Installation on Arch Linux'
 slug: 'plasma-install-guide'
 date: 2015-06-22
+thumb: plasma_install.png
 tags:
   - Linux
   - Guides

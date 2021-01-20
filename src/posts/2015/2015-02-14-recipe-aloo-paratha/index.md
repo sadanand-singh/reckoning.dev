@@ -2,6 +2,7 @@
 title: 'Aloo Paratha Recipe'
 slug: 'recipe-aloo-paratha'
 date: 2015-02-14
+thumb: paratha.jpg
 tags:
   - Recipe
 ---

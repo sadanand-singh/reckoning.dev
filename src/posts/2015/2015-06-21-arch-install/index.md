@@ -2,6 +2,7 @@
 title: 'Arch Installation Guide'
 slug: 'arch-install'
 date: 2015-06-21
+thumb: arch.png
 tags:
   - Linux
   - Guides
