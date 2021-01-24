@@ -1,6 +1,11 @@
 {%- set lazyImage = "data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201%201'%20height%3D'500'%20width%3D'960'%20style%3D'background-color%3Argb(203%2C213%2C224)'%2F%3E" -%}
 {% set related = collections.posts | relatedPosts(tags, page.date, page.url) %}
 {% for post in related %}
+{% if loop.first %}
+    <h2 class="text-3xl text-left font-bold leading-normal text-gray-900 dark:text-gray-100 mt-20 mb-3">Similar Posts:</h2>
+    <div class="border-t mt-1 pt-4 border-gray-400">
+    <div class="flex flex-wrap -mx-2">
+{% endif %}
 <div class="w-full sm:w-1/2 md:w-1/3 self-stretch p-2 mb-2">
     <div class="rounded shadow-md h-full">
         <a href="{{ post.url | url }}">
@@ -21,4 +26,8 @@
         </div>
     </div>
 </div>
+{% if loop.last %}
+    </div>
+    </div>
+{% endif %}
 {% endfor %}
