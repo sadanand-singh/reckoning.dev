@@ -63,7 +63,7 @@ of my 2019:
 
 **My Incomplete Tasks and Failures:**
 
-- Object detection for extremely imbalanced data and loose bounding boxes.
+- Object detection for extremely imbalanced data and loose bounding boxes
 - Generative models for breast mammogram data
 - A GUI for debugging of deep learning models on medical images
 - A markdown editor/preview app for OSX

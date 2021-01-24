@@ -5,6 +5,7 @@ tags:
   - DeepLearning
   - MachineLearning
 slug: track-dl-experiments
+featured: true
 thumb: comet.jpg
 ---
 

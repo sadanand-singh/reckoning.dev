@@ -5,6 +5,7 @@ tags:
   - DeepLearning
   - Guides
 thumb: zotero.png
+featured: true
 slug: zotero-reference-manager
 ---
 

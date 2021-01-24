@@ -5,6 +5,7 @@ tags:
   - DeepLearning
   - MachineLearning
 slug: yolo-v4
+featured: true
 thumb: object_detection.jpg
 ---
 

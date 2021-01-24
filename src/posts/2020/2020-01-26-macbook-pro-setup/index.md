@@ -5,6 +5,7 @@ tags:
   - Guides
 slug: macbook-pro-setup
 thumb: mac.jpg
+featured: true
 ---
 
 I have documented my setup for [linux machines before](/blog/mydlsetup) before. However, lately I have

@@ -96,6 +96,8 @@ module.exports = (config) => {
   config.addFilter('readableDate', require('./lib/filters/readableDate'));
   config.addFilter('minifyJs', require('./lib/filters/minifyJs'));
   config.addFilter('relatedPosts', require('./lib/filters/related'));
+  config.addFilter('featuredPosts', require('./lib/filters/featured'));
+  config.addNunjucksFilter('limit', (arr, limit) => arr.slice(0, limit));
 
   config.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
 

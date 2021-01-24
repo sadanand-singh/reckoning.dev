@@ -3,7 +3,7 @@ layout: default
 permalink: "index.html"
 ---
 
-<div class="flex flex-col items-center text-lg mt-10">
+<div class="flex flex-col items-center text-lg mt-1">
     {% if author.avatar %}
     <a href="{{ author.homepage | url }}" target="_blank" rel="noopener">
         <img class="w-32 h-32 md:w-40 md:h-40 rounded-full" src="{{ author.avatar | url }}" width="128" height="128" alt="Author avatar">
@@ -35,3 +35,11 @@ permalink: "index.html"
         </div>
     </div>
 </div>
+
+<h2 class="text-2xl text-left font-bold leading-normal text-green-900 dark:text-green-600 mt-10 mb-3">Featured Posts</h2>
+<div class="mt-1 pt-4 border-gray-400">
+    <div class="flex flex-wrap -mx-2">
+    {% include "partials/featured.njk" %}
+    </div>
+</div>
+<a class="flex justify-end text-xl text-right font-bold leading-normal text-pink-900 dark:text-pink-500 mt-10 mb-3" href='/blog'>See All Posts -></a>
