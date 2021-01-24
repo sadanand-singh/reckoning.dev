@@ -1,6 +1,6 @@
 ---
 title: "How do you measure trust in deep learning?"
-date: "2021-01-23 T17:00:00.000Z"
+date: "2021-01-23T17:00:00.000Z"
 syndicate: true
 link: "https://bdtechtalks.com/2020/11/23/deep-learning-trust-metrics/"
 tags: link
