@@ -2,6 +2,11 @@ module.exports = {
   layout: 'post',
   title: 'Untitled',
   eleventyComputed: {
+    sitemap: {
+      'changefreq': 'weekly',
+      'priority': 0.75,
+      'ignore': false,
+    },
     permalink: (data) => {
       if (data.slug) {
         return `${data.slug}/index.html`;

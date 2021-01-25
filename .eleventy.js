@@ -1,5 +1,6 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const shortcodes = require('./lib/shortcodes/shortcodes.js')
 const pairedshortcodes = require('./lib/shortcodes/paired_shortcodes.js')
 
@@ -42,6 +43,7 @@ module.exports = (config) => {
   });
 
   config.addPlugin(syntaxHighlight);
+  config.addPlugin(pluginRss);
 
   /**
    * Shortcodes
