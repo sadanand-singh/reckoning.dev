@@ -30,7 +30,7 @@ let options = {
 };
 let opts = {
   permalink: true,
-  permalinkSymbol: '#',
+  permalinkSymbol: '',
   permalinkClass: 'heading-anchor',
   permalinkBefore: true,
   level: 2,

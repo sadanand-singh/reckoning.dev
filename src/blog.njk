@@ -1,16 +1,11 @@
 ---
 layout: default
 pagination:
-    data: collections.pagedPosts
-    size: 1
-    alias: paged
+    data: collections.posts
+    size: 100000
+    alias: allPosts
 permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}blog/"
 ---
 
-<div class="flex flex-wrap -mx-2">
-    {% include "partials/post-grid.njk" %}
-</div>
 
-{% if collections.posts.length > site.paginate %}
-{% include "partials/paginator.njk" %}
-{% endif %}
+{% include "partials/post-list.njk" %}

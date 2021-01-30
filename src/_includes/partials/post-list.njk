@@ -1,0 +1,15 @@
+<h1 class="text-3xl leading-normal font-bold mt-0 mb-7 text-right animated shake">All Posts</h1>
+
+{% set currentYear = "" %}
+
+{% for post in allPosts %}
+{% set postYear = post.date.getFullYear() %}
+{% if currentYear != postYear %}
+{% set currentYear = postYear %}
+<h2 class="text-2xl font-bold leading-normal text-gray-900 dark:text-gray-400 mt-4 mb-2">{{ postYear }}</h2>
+{% endif %}
+<article class="flex justify-between items-center box-border mt-1 mr-0 mb-1 ml-6">
+    <a class="overflow-hidden overflow-ellipsis whitespace-nowrap min-w-1/10 max-w-xs md:max-w-xl hover:text-teal-500 dark:hover:text-teal-400" href="{{ post.url | url }}">{{ post.data.title }}</a>
+    <span class="text-right text-gray-400 dark:text-gray-600 w-16">{{ post.date | readableDate(true) }}</span>
+</article>
+{% endfor %}

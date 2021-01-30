@@ -22,11 +22,11 @@ behind. With this philosophy, I have been following [gatsby themes] for some tim
 themes along with [mdx], [theme-ui] and [styled components], make up an ultimate
 [JAM stack](https://jamstack.org/) to build websites and blogs.
 
-::: callout-blue
+::: callout-pink
 **TLDR**
 
 - Using [novela](https://github.com/narative/gatsby-theme-novela) as a starting point to start using gatsby themes, theme-ui and styled components.
-- **Several modifications:** tags, math rendering via katex, Table of Contents, Image Gallery, Scroll to top, next/previous posts, title of code blocks etc.
+- Several other modifications: tags, math rendering via katex, Table of Contents, Image Gallery, Scroll to top, next/previous posts, title of code blocks etc.
 - [gatsby cloud](https://www.gatsbyjs.com/cloud/) for fatster build and deployment.
 - Find all the modifications at [my github repo](https://github.com/sadanand-singh/reckoning.dev)
 :::

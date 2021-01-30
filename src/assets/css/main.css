@@ -79,46 +79,117 @@
         @apply dark:text-gray-500 mt-4;
     }
 
+    .tags a {
+        display: inline-block;
+        position: relative;
+        margin: 5px 10px;
+        transition: all ease-out 0.3s;
+    }
+
+    .tags a:hover {
+        transform: scale(1.2);
+    }
+
+    .heading-anchor {
+        opacity: 0;
+        font-weight: 900;
+    }
+
+    .heading-anchor:hover {
+        opacity: 1;
+    }
+
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .pulse {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+    }
+    .heartBeat {
+        -webkit-animation-name: heartBeat;
+        animation-name: heartBeat;
+    }
+    .shake {
+        -webkit-animation-name: headShake;
+        animation-name: headShake;
+    }
+    .animated.faster {
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
     /* Define some standard callout blocks */
     .callout {
-        @apply px-8 py-4 mb-4 rounded-lg bg-yellow-200;
+        @apply px-8 py-4 mb-4 bg-yellow-200 dark:text-gray-900 dark:bg-yellow-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-yellow-600 dark:border-yellow-700;
     }
-    .callout,
+    .prose .callout a {
+        @apply text-gray-800;
+    }
+    .prose .callout ul > li::before {
+        @apply bg-gray-900;
+    }
     .callout strong,
     .callout em {
-        @apply dark:bg-yellow-400 dark:text-gray-900;
+        @apply text-2xl dark:text-gray-800;
     }
+
     .callout-blue {
-        @apply px-8 py-4 mb-4 rounded-lg bg-blue-200;
+        @apply px-8 py-4 mb-4 rounded-lg bg-blue-200 text-gray-900 dark:bg-blue-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-blue-800;
     }
-    .callout-blue,
+    .prose .callout-blue a {
+        @apply text-gray-800;
+    }
+    .prose .callout-blue ul > li::before {
+        @apply bg-gray-900;
+    }
     .callout-blue strong,
     .callout-blue em {
-        @apply dark:text-gray-200 dark:bg-blue-500;
+        @apply text-2xl dark:text-gray-800;
     }
+
     .callout-pink {
-        @apply px-8 py-4 mb-4 rounded-lg bg-pink-200;
+        @apply px-8 py-4 mb-4 bg-pink-200 text-gray-900 dark:bg-pink-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-pink-600 dark:border-pink-600;
     }
-    .callout-pink,
+    .prose .callout-pink a {
+        @apply text-gray-800;
+    }
+    .prose .callout-pink ul > li::before {
+        @apply bg-gray-900;
+    }
     .callout-pink strong,
     .callout-pink em {
-        @apply dark:text-gray-200 dark:bg-pink-500;
+        @apply text-2xl dark:text-gray-800;
     }
+
     .callout-green {
-        @apply px-8 py-4 mb-4 rounded-lg bg-green-200;
+        @apply px-8 py-4 mb-4 bg-green-200 text-gray-900 dark:bg-green-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-green-600 dark:border-green-900;
     }
-    .callout-green,
+    .prose .callout-green a {
+        @apply text-gray-800;
+    }
+    .prose .callout-green ul > li::before {
+        @apply bg-gray-900;
+    }
     .callout-green strong,
     .callout-green em {
-        @apply dark:text-gray-200 dark:bg-green-700;
+        @apply text-2xl dark:text-gray-800;
     }
+
     .warning {
-        @apply px-8 py-4 mb-4 rounded-lg bg-red-400 text-gray-50;
+        @apply px-8 py-4 mb-4 bg-red-400 text-gray-50 text-gray-900 dark:bg-red-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-red-800;
     }
-    .warning,
+    .prose .warning a {
+        @apply text-gray-800;
+    }
+    .prose .warning ul > li::before {
+        @apply bg-gray-900;
+    }
     .warning strong,
     .warning em {
-        @apply text-gray-50 dark:bg-red-700  dark:text-gray-200;
+        @apply text-2xl dark:text-gray-800;
     }
 }
 
