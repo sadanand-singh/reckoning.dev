@@ -10,8 +10,6 @@ Python/C++, and medical and biological data. My background is in computational p
 modeling and optimization and software design. I have a PhD in computational physics/chemical
 engineering focusing on computational models of nano-materials and bio-molecules.
 
-![](/assets/images/about.jpg)
-
 My active area of research is in applications of deep learning and computer vision in medical
 imaging and in the radiology business. I am specifically interested in designing AI models that are explainable and
 tractable.

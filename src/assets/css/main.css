@@ -123,7 +123,7 @@
     }
     /* Define some standard callout blocks */
     .callout {
-        @apply px-8 py-4 mb-4 bg-yellow-200 dark:text-gray-900 dark:bg-yellow-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-yellow-600 dark:border-yellow-700;
+        @apply px-8 py-4 mb-2 bg-yellow-200 dark:text-gray-900 dark:bg-yellow-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-yellow-600 dark:border-yellow-700;
     }
     .prose .callout a {
         @apply text-gray-800;
@@ -131,13 +131,22 @@
     .prose .callout ul > li::before {
         @apply bg-gray-900;
     }
-    .callout strong,
-    .callout em {
-        @apply text-2xl dark:text-gray-800;
+    .prose .callout h2,
+    .prose .callout h3 {
+        @apply mt-0 mb-1 text-2xl dark:text-gray-800;
+    }
+    .prose .callout h3 {
+        @apply text-xl;
+    }
+    .prose .callout p {
+        @apply mb-1 mt-0;
+    }
+    .prose .callout strong {
+        @apply text-lg text-gray-800;
     }
 
     .callout-blue {
-        @apply px-8 py-4 mb-4 rounded-lg bg-blue-200 text-gray-900 dark:bg-blue-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-blue-800;
+        @apply px-8 py-4 mb-2 rounded-lg bg-blue-200 text-gray-900 dark:bg-blue-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-blue-800;
     }
     .prose .callout-blue a {
         @apply text-gray-800;
@@ -145,13 +154,22 @@
     .prose .callout-blue ul > li::before {
         @apply bg-gray-900;
     }
-    .callout-blue strong,
-    .callout-blue em {
-        @apply text-2xl dark:text-gray-800;
+    .prose .callout-blue h2,
+    .prose .callout -blue h3 {
+        @apply mt-0 mb-1 text-2xl dark:text-gray-800;
+    }
+    .prose .callout-blue h3 {
+        @apply text-xl;
+    }
+    .prose .callout-blue p {
+        @apply mb-1 mt-0;
+    }
+    .prose .callout-blue strong {
+        @apply text-lg text-gray-800;
     }
 
     .callout-pink {
-        @apply px-8 py-4 mb-4 bg-pink-200 text-gray-900 dark:bg-pink-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-pink-600 dark:border-pink-600;
+        @apply px-8 py-4 mb-2 bg-pink-200 text-gray-900 dark:bg-pink-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-pink-600 dark:border-pink-600;
     }
     .prose .callout-pink a {
         @apply text-gray-800;
@@ -159,13 +177,22 @@
     .prose .callout-pink ul > li::before {
         @apply bg-gray-900;
     }
-    .callout-pink strong,
-    .callout-pink em {
-        @apply text-2xl dark:text-gray-800;
+    .prose .callout-pink h2,
+    .prose .callout-pink h3 {
+        @apply mt-0 mb-1 text-2xl dark:text-gray-800;
+    }
+    .prose .callout-pink h3 {
+        @apply text-xl;
+    }
+    .prose .callout-pink p {
+        @apply mb-1 mt-0;
+    }
+    .prose .callout-pink strong {
+        @apply text-lg text-gray-800;
     }
 
     .callout-green {
-        @apply px-8 py-4 mb-4 bg-green-200 text-gray-900 dark:bg-green-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-green-600 dark:border-green-900;
+        @apply px-8 py-4 mb-2 bg-green-200 text-gray-900 dark:bg-green-400 rounded-t-none rounded-r-lg rounded-b-none rounded-l-none border-l-8 border-green-600 dark:border-green-900;
     }
     .prose .callout-green a {
         @apply text-gray-800;
@@ -173,9 +200,18 @@
     .prose .callout-green ul > li::before {
         @apply bg-gray-900;
     }
-    .callout-green strong,
-    .callout-green em {
-        @apply text-2xl dark:text-gray-800;
+    .prose .callout-green h2,
+    .prose .callout-green h3 {
+        @apply mt-0 mb-1 text-2xl dark:text-gray-800;
+    }
+    .prose .callout-green h3 {
+        @apply text-xl;
+    }
+    .prose .callout-green p {
+        @apply mb-1 mt-0;
+    }
+    .prose .callout-green strong {
+        @apply text-lg text-gray-800;
     }
 
     .warning {
@@ -187,9 +223,18 @@
     .prose .warning ul > li::before {
         @apply bg-gray-900;
     }
-    .warning strong,
-    .warning em {
-        @apply text-2xl dark:text-gray-800;
+    .prose .warning h2,
+    .prose .warning h3 {
+        @apply mt-0 mb-1 text-2xl dark:text-gray-800;
+    }
+    .prose .warning h3 {
+        @apply text-xl;
+    }
+    .prose .warning p {
+        @apply mb-1 mt-0;
+    }
+    .prose .warning strong {
+        @apply text-lg text-gray-800;
     }
 }
 

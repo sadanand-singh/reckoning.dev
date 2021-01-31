@@ -14,8 +14,8 @@ learning research as well. Beyond the usual challenges in software development, 
 developers face new challenges - experiment management (tracking which parameters, code, and data
 went into a result) and reproducibility (running the same code and environment later)!
 
-::: callout-pink
-**UPDATE**
+::: callout-green
+### UPDATE
 
 Recently, I was contacted by
 [Gideon Mendels, CEO of comet.ml](https://www.linkedin.com/in/mendels/) regarding the issues that
@@ -29,7 +29,7 @@ this article, I will describe my setup for using [Pytorch](https://pytorch.org) 
 [comet.ml][comet] for the management of experiments.
 
 ::: callout
-**TLDR**
+### TLDR
 
 [Comet.ml](comet) is a great step towards management of deep learning experiments. The look and
 feel is quite ahead of the competition. I recommend it highly for _small projects_. I would wait
