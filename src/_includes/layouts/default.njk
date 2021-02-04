@@ -57,15 +57,15 @@
 </head>
 
 <body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-400 dark:bg-dark dark:border-gray-800 break-words">
-{% if process.environment == 'production' %}
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}"
-    height="0" width="0" style="display:none;visibility:hidden">
-    </iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-{% endif %}
+    {% if process.environment == 'production' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}"
+        height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
     {% include "partials/header.njk" %}
     <main class="mx-7 lg:mx-6 mt-32 flex-grow">
         {% if layout === "post" %}
