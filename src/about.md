@@ -48,9 +48,8 @@ tractable.
 ## Online
 
 <ul class="about__social">
-    <li><a href="{{ author.social.twitter.url }}">Twitter</a></li>
-    <li><a href="{{ author.social.github.url }}">Github</a></li>
-    <li><a href="{{ author.social.stackoverflow.url }}">StackOverflow</a></li>
-    <li><a href="{{ author.social.linkedin.url }}">LinkedIn</a></li>
-    <li><a href="{{ author.social.keybase.url }}">Keybase</a></li>
+    <li><a href="https://twitter.com/reckoningdev">Twitter</a></li>
+    <li><a href="https://github.com/sadanand-singh">Github</a></li>
+    <li><a href="https://www.instagram.com/nature.photons">Instagram</a></li>
+    <li><a href="https://linkedin.com/in/sadanandsingh">LinkedIn</a></li>
 </ul>
