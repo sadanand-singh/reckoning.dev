@@ -29,7 +29,7 @@ tractable.
 
 ## Publications
 
-- [An improved mammography malignancy model withself-supervised learning](https://spie.org/MI/conferencedetails/computer-aided-diagnosis?SSO=1#session-7)
+- [An improved mammography malignancy model with self-supervised learning](https://spie.org/MI/conferencedetails/computer-aided-diagnosis?SSO=1#session-7)
 - [A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams](https://pubs.rsna.org/doi/10.1148/ryai.2020200015)
 - [Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)
 - [A hypersensitive breast cancer detector](https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1)

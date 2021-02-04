@@ -45,9 +45,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}"/>
+    {% if process.environment == 'production' %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer', '{{ site.google_tag }}');</script>
+        <!-- End Google Tag Manager -->
+    {% endif %}
 </head>
 
 <body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-400 dark:bg-dark dark:border-gray-800 break-words">
+{% if process.environment == 'production' %}
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}"
+    height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+{% endif %}
     {% include "partials/header.njk" %}
     <main class="mx-7 lg:mx-6 mt-32 flex-grow">
         {% if layout === "post" %}
