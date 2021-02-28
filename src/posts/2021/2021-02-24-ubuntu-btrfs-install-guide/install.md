@@ -3,6 +3,7 @@ title: Ubuntu Desktop 20.04 with btrfs-luks full disk encryption
 date: "2021-02-24T10:50:00+01:00"
 thumb: ubuntu20.jpg
 slug: ubuntu-btrfs-guide
+draft: true
 tags:
   - Linux
   - Guides
