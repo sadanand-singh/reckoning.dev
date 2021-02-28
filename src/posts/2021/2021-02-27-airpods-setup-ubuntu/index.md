@@ -85,7 +85,6 @@ Ubuntu 20.04.
 
     ```
     [Unit]
-
     Description=Run ofono-phonesim in the background
 
     [Service]
@@ -116,7 +115,6 @@ Ubuntu 20.04.
     ```
 
     [Unit]
-
     Description=Enable and online phonesim modem
     Requires=ofono-phonesim.service
 
@@ -135,7 +133,6 @@ Ubuntu 20.04.
     Then run the following commands to run both daemons:
 
     ```bash
-
     sudo systemctl daemon-reload
     sudo systemctl enable ofono-phonesim.service
     sudo systemctl enable phonesim-enable-modem.service
@@ -145,7 +142,6 @@ Ubuntu 20.04.
     Check if the service is running with
 
     ```bash
-
     sudo service phonesim-enable-modem status
     ```
 
