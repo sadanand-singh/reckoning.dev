@@ -18,12 +18,15 @@ task –
   where the chances of objects are high. In the second stage, it will apply a Convolution Neural
   Network to these regions to detect the presence of an object. One of the problems with this
   method is, we have to execute the detector in each of the ROI, and that makes is slow and
-  computationally expensive. Some common examples of these types of algorithms are [Faster R-CNN](https://arxiv.org/abs/1506.01497), [Mask R-CNN](https://arxiv.org/abs/1703.06870) etc.
+  computationally expensive. Some common examples of these types of algorithms are
+  [Faster R-CNN](https://arxiv.org/abs/1506.01497), [Mask R-CNN](https://arxiv.org/abs/1703.06870) etc.
 
 - **One-stage** object-detection models – In this class of algorithms, there is no selection of
   interesting ROI in the image, instead of that, it will predict the classes and bounding boxes for
   the entire image at once. This makes detection faster than two-stage algorithms. Some common
-  examples of such algorithms are [SSD](https://arxiv.org/abs/1512.02325), [RetinaNet](https://arxiv.org/abs/1708.02002), [FCOS](https://arxiv.org/abs/1904.01355), [YOLO](https://arxiv.org/abs/1804.02767) etc.
+  examples of such algorithms are [SSD](https://arxiv.org/abs/1512.02325),
+  [RetinaNet](https://arxiv.org/abs/1708.02002), [FCOS](https://arxiv.org/abs/1904.01355),
+  [YOLO](https://arxiv.org/abs/1804.02767) etc.
 
 In this article, we are going to focus on a particular algorithm that belongs to the one-stage
 group. _You only look once_, or **YOLO**, is one of the faster object detection algorithms out
@@ -47,7 +50,9 @@ layers. These are typically one of common CNN architectures like Resnet, VGGNet,
 YOLO in particular uses a specialized version of backbone called 'Darknet'.
 
 **Neck** is usually composed of several layers whose goal is to collect feature maps from different
-stages. Common examples of "neck" are: [Feature Pyramid Network (FPN)](https://arxiv.org/abs/1612.03144), [PAN](https://arxiv.org/abs/1803.01534), [SPP](https://arxiv.org/abs/1406.4729), [ASPP](https://arxiv.org/abs/1606.00915) etc.
+stages. Common examples of "neck" are: [Feature Pyramid Network (FPN)](https://arxiv.org/abs/1612.03144),
+[PAN](https://arxiv.org/abs/1803.01534), [SPP](https://arxiv.org/abs/1406.4729),
+[ASPP](https://arxiv.org/abs/1606.00915) etc.
 
 **Head** is a part of the object detection model that is used for the prediction of custom classes
 and drawing bounding boxes around objects. Based on the type of the head, we can distinguish two
@@ -156,8 +161,8 @@ b_h &= p_h e^{t_h}
 $$
 
 The localization loss is the sum of squared error loss on these terms. If the ground truth for some
-coordinate prediction is $\hat{t}\_\*$ , then gradient is the ground truth value (computed from the
-ground truth box) minus our prediction: $\hat{t}\_\* - t\_\*$. This ground truth value can be easily
+coordinate prediction is $\hat{t}_*$ , then gradient is the ground truth value (computed from the
+ground truth box) minus our prediction: $\hat{t}_* - t_*$. This ground truth value can be easily
 computed by inverting the equations above.
 
 ## YOLO V4 Modifications
@@ -307,7 +312,7 @@ Where $B$ is the bounding box and $B^{gt}$ is the ground truth box.
 [Generalized IoU (GIoU)](https://arxiv.org/abs/1902.09630) fixes this by refining the loss as:
 
 $$
-\mathcal{L}\_{GIoU} = \mathcal{L}\_{IoU} +  \frac{ |C - B \cup B^{gt}| }{ |C| }
+\mathcal{L}_{GIoU} = \mathcal{L}_{IoU} +  \frac{ |C - B \cup B^{gt}| }{ |C| }
 $$
 
 where $C$ is the smallest box covering $B$ and $B^{gt}$.
