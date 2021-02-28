@@ -1,83 +1,116 @@
 {%- set metaTitle -%}
-    {%- if not title -%}{{ site.title }} - {{ site.description | safe }}
-    {%- else -%}{{ title | safe }} | {{ site.title }}
-    {%- endif -%}
+{%- if not title -%}{{ site.title }}
+    -
+    {{ site.description | safe }}
+{%- else -%}{{ title | safe }}
+    |
+    {{ site.title }}
+{%- endif -%}
 {%- endset -%}
 {%- set metaDesc -%}
-    {%- if not description -%}{{ site.description | safe }}
-    {%- else -%}{{ description | safe }}
-    {%- endif -%}
+{%- if not description -%}{{ site.description | safe }}
+{%- else -%}{{ description | safe }}
+{%- endif -%}
 {%- endset -%}
 {%- set metaKeywords -%}
-    {%- if tags -%}{%- for tag in tags -%}{{ tag }},{%- endfor -%}{%- endif -%}
-    {%- if site.keywords -%}
-        {%- for keyword in site.keywords -%}
-            {{ keyword }}{%- if not loop.last %},{% endif -%}
-        {%- endfor -%}
-    {%- endif -%}
+{%- if tags -%}
+    {%- for tag in tags -%}{{ tag }},{%- endfor -%}
+{%- endif -%}
+{%- if site.keywords -%}
+    {%- for keyword in site.keywords -%}
+        {{ keyword }}
+        {%- if not loop.last %},{% endif -%}
+    {%- endfor -%}
+{%- endif -%}
 {%- endset -%}
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ metaTitle }}</title>
-    <meta name="title" content="{{ metaTitle }}">
-    <meta name="description" content="{{ metaDesc }}">
-    <meta name="keywords" content="{{ metaKeywords }}">
-    <meta name="author" content="{{ author.name }}">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{ site.url | url }}{{ page.url }}">
-    <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/favicon.png' | url }}">
-    <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"/>
-    <link rel="stylesheet" href="{{ '/assets/css/prism-dracula.css' | url }}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}"/>
-    {% if process.environment == 'production' %}
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer', '{{ site.google_tag }}');</script>
-        <!-- End Google Tag Manager -->
-    {% endif %}
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ metaTitle }}</title>
+        <meta name="title" content="{{ metaTitle }}">
+        <meta name="description" content="{{ metaDesc }}">
+        <meta name="keywords" content="{{ metaKeywords }}">
+        <meta name="author" content="{{ author.name }}">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="{{ site.url | url }}{{ page.url }}">
 
-<body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-400 dark:bg-dark dark:border-gray-800 break-words">
-    {% if process.environment == 'production' %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}"
-        height="0" width="0" style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
-    {% include "partials/header.njk" %}
-    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
-        {% if layout === "post" %}
-        {{ content | safe }}
-        {% else %}
-        <div class="max-w-5xl mx-auto">
-            {{ content | safe }}
-        </div>
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ '/assets/img/apple-icon-57x57.png' | url }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ '/assets/img/apple-icon-60x60.png' | url }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ '/assets/img/apple-icon-72x72.png' | url }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ '/assets/img/apple-icon-76x76.png' | url }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ '/assets/img/apple-icon-114x114.png' | url }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ '/assets/img/apple-icon-120x120.png' | url }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ '/assets/img/apple-icon-144x144.png' | url }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ '/assets/img/apple-icon-152x152.png' | url }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-icon-180x180.png' | url }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/android-icon-192x192.png' | url }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32x32.png' | url }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ '/assets/img/favicon-96x96.png' | url }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16x16.png' | url }}">
+        <link rel="manifest" href="{{ '/assets/img/manifest.json' | url }}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{ '/assets/img/ms-icon-144x144.png' | url }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"/>
+        <link rel="stylesheet" href="{{ '/assets/css/prism-dracula.css' | url }}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"/>
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}"/>
+        {% if process.environment == 'production' %}
+            <!-- Google Tag Manager -->
+            <script>
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                    var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s),
+                        dl = l != 'dataLayer'
+                            ? '&l=' + l
+                            : '';
+                    j.async = true;
+                    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f
+                        .parentNode
+                        .insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', '{{ site.google_tag }}');
+            </script>
+            <!-- End Google Tag Manager -->
         {% endif %}
-    </main>
-    {% include "partials/footer.njk" %}
-    <script src="{{ '/assets/js/bundle.js' | url }}"></script>
-</body>
+    </head>
+
+    <body class="flex flex-col h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-400 dark:bg-dark dark:border-gray-800 break-words">
+        {% if process.environment == 'production' %}
+            <!-- Google Tag Manager (noscript) -->
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        {% endif %}
+        {% include "partials/header.njk" %}
+        <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+            {% if layout === "post" %}
+                {{ content | safe }}
+            {% else %}
+                <div class="max-w-5xl mx-auto">
+                    {{ content | safe }}
+                </div>
+            {% endif %}
+        </main>
+        {% include "partials/footer.njk" %}
+        <script src="{{ '/assets/js/bundle.js' | url }}"></script>
+    </body>
 
 </html>
