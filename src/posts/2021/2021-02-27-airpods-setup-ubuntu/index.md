@@ -12,13 +12,15 @@ If you have apple airpods or airpods pro, and sometimes want to use it with your
 follow this guide! If you try to pair airpods without doing any of these steps, most likely the
 pairing will never complete.
 
+This a compilation of ideas from two askubuntu posts.[^1] [^2]
+
 ::: callout-blue
 **Note:** You should use HSP/HFP profile only when you need to use the airpods as microphone for
-example to make a zoon/google meet call. The sound quality in this mode can be quite terrible.
+example to make a zoom or google meet call. The sound quality in this mode can be quite terrible.
 :::
 
 To enable pairing of airpods, you will need to update the ControllerMode to `bredr` from the
-default value of dual. This can be done by editing the file `/etc/bluetooth/main.conf`.
+default value of `dual`. This can be done by editing the file `/etc/bluetooth/main.conf`.
 Then restart the Bluetooth service using `sudo /etc/init.d/bluetooth restart`
 
 You should be able to pair your airpods now and use it as headphones!
@@ -75,14 +77,13 @@ Ubuntu 20.04.
     sudo systemctl restart ofono.service
     ```
 
-5. Now you will need to define and enable few services to start the ofono-phonesim.
+    Now you will need to define and enable few services to start the ofono-phonesim.
 
     To run `ofono-phonesim -p 12345 /usr/share/phonesim/default.xml` on startup as a systemd unit,
     create the file `/etc/systemd/system/ofono-phonesim.service`(as root) with the following
     contents:
 
     ```
-
     [Unit]
 
     Description=Run ofono-phonesim in the background
@@ -151,8 +152,7 @@ Ubuntu 20.04.
 Finally, restart `pulseaudio` with `pulseaudio -k`.
 
 Now you should be able to switch to HSP/HFP profile for airpods and use it as an
-input device/microphones.
+input device / microphones.
 
-**Source 1:** https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset
-
-**Source 2:** https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-unit/1236379#1236379
+[^1]: https://askubuntu.com/questions/922860/pairing-apple-airpods-as-headset
+[^2]: https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-unit/1236379#1236379
