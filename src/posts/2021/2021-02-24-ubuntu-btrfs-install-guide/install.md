@@ -8,9 +8,30 @@ tags:
   - Linux
   - Guides
 ---
-## Overview
 
-This tutorial is made with [Ubuntu 20.04 Focal Fossa](http://releases.ubuntu.com/focal/) copied to an installation media (usually a USB Flash device but may be a DVD or the ISO file attached to a virtual machine hypervisor). Other versions of Ubuntu or distributions that use the Ubiquity installer (like Linux Mint) also work, see my other [installation guides](../../install-guides).
+If you have followed me here, you know I am a big fan of BTRFS and luks based full disk encryption.
+I used to use [Arch Linux](https://www.archlinux.org/) in [the past](/complete-setup-arch-gnome/),
+however recently I have started using Ubuntu LTS as main OS mainly for simplicity and easy
+availability of numerous tricks online!
+
+The main reason I want to to take this little complex route of installation than simple easy way
+that Ubuntu provides:
+
+- A luks-based full disk encryption for data safety, specially since I work a lot with medical data!
+- An un-encrypted EFI partition for the GRUB bootloader
+- a btrfs-inside-luks partition for the root filesystem (including /boot) containing a subvolume
+  `@` for `/` and a subvolume `@home` for `/home` with only one passphrase prompt from GRUB!
+- automatic system snapshots and easy rollback similar to `zsysc` using:
+  - [Timeshift](https://github.com/teejee2008/timeshift), which will regularly take (almost instant)
+    snapshots of the system
+  - [grub-btrfs](https://github.com/Antynea/grub-btrfs), which will automatically create GRUB
+    entries for all your btrfs snapshots
+
+
+This tutorial is made with [Ubuntu 20.04 Focal Fossa](http://releases.ubuntu.com/focal/) copied to
+an installation media (usually a USB Flash device but may be a DVD or the ISO file attached to a
+virtual machine hypervisor). This has been
+[adapted from this Blog](https://mutschler.eu/linux/install-guides/ubuntu-btrfs/).
 
 ## Step 1: Boot the install, check UEFI mode and open an interactive root shell
 
