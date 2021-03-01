@@ -46,6 +46,10 @@
         @apply text-pink-400 dark:text-pink-400;
     }
 
+    .prose li code {
+        @apply text-pink-400 dark:text-pink-400;
+    }
+
     .prose td code {
         @apply text-pink-400 dark:text-pink-400;
     }
@@ -55,6 +59,14 @@
     }
 
     .prose p code::after {
+        content: '';
+    }
+
+    .prose li code::before {
+        content: '';
+    }
+
+    .prose li code::after {
         content: '';
     }
 
