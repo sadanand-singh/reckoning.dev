@@ -1,23 +1,20 @@
 ---
 title: Ubuntu Desktop 20.04 with btrfs-luks full disk encryption
 date: "2021-02-24T10:50:00+01:00"
-thumb: ubuntu20.jpg
+thumb: ubuntu_btrfs.jpg
 slug: ubuntu-btrfs-guide
 draft: true
 tags:
   - Linux
   - Guides
 ---
-
-{% youtube "yRSElRlp7TQ" %}
-
 ## Overview
 
 This tutorial is made with [Ubuntu 20.04 Focal Fossa](http://releases.ubuntu.com/focal/) copied to an installation media (usually a USB Flash device but may be a DVD or the ISO file attached to a virtual machine hypervisor). Other versions of Ubuntu or distributions that use the Ubiquity installer (like Linux Mint) also work, see my other [installation guides](../../install-guides).
 
 ## Step 1: Boot the install, check UEFI mode and open an interactive root shell
 
-Since most modern PCs have UEFI, I will cover only the UEFI installation (see the [References](../../references/#btrfs-installation-guides) on how to deal with Legacy installs). So, boot the installation medium in UEFI mode, choose your language and click `Try Ubuntu`. Once the Live Desktop environment has started we need to use a Terminal shell command-line to issue a series of commands to prepare the target device before executing the installer itself. As I have a German Keyboard, I first go to `Settings -- Region & Language` and set my keyboard layout.
+Since most modern PCs have UEFI, I will cover only the UEFI installation on how to deal with Legacy installs). So, boot the installation medium in UEFI mode, choose your language and click `Try Ubuntu`. Once the Live Desktop environment has started we need to use a Terminal shell command-line to issue a series of commands to prepare the target device before executing the installer itself. As I have a German Keyboard, I first go to `Settings -- Region & Language` and set my keyboard layout.
 
 Then, open a terminal (<kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>T</kbd>) and run the following command:
 

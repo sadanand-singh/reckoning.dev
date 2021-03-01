@@ -10,40 +10,41 @@ tags:
 
 If you have apple airpods or airpods pro, and sometimes want to use it with your Ubuntu machines,
 follow this guide! If you try to pair airpods without doing any of these steps, most likely the
-pairing will never complete.
+pairing process will never complete.
 
-This a compilation of ideas from two askubuntu posts.[^1] [^2]
+This is a compilation of ideas from few askubuntu posts.[^1] [^2]
 
 ::: callout-blue
 **Note:** You should use HSP/HFP profile only when you need to use the airpods as microphone for
 example to make a zoom or google meet call. The sound quality in this mode can be quite terrible.
 :::
 
-To enable pairing of airpods, you will need to update the ControllerMode to `bredr` from the
+To enable pairing of airpods, you will need to update the `ControllerMode` to `bredr` from the
 default value of `dual`. This can be done by editing the file `/etc/bluetooth/main.conf`.
-Then restart the Bluetooth service using `sudo /etc/init.d/bluetooth restart`
+Then restart the Bluetooth service using `sudo /etc/init.d/bluetooth restart` command.
 
 You should be able to pair your airpods now and use it as headphones!
 
 ## Enabling Airpods as Microphone
 
 In order to have airpods work as microphones, you will need to enable HSP/HFP profile. However,
-Pulseaudio by default only supports HSP. In order to make HSP/HFP work, you have to enable HFP on
+[Pulseaudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) by default only supports HSP.
+In order to make HSP/HFP work, you have to enable HFP on
 pulseaudio which needs `ofono`. Here are steps to enable HFP on pulseaudio using ofono on
 Ubuntu 20.04.
 
-1. Install ofono: `sudo apt install ofono`
+1. Install `ofono` using: `sudo apt install ofono`
 
-2. Config pulseaudio to use ofono:
+2. Configure pulseaudio to use ofono:
 
-    Goto `/etc/pulse/default.pa` find the line `load-module module-bluetooth-discover` and change
-    it in `load-module module-bluetooth-discover headset=ofono`.
+    Goto `/etc/pulse/default.pa`, find the line `load-module module-bluetooth-discover` and change
+    it to `load-module module-bluetooth-discover headset=ofono`.
 
     Add the user `pulse` to group `bluetooth` to grant the permission:
     `sudo usermod -aG bluetooth pulse`
 
-    **VERY IMPORTANT:** To grant the permission, add this to `/etc/dbus-1/system.d/ofono.conf`
-    (before `</busconfig>`):
+    **VERY IMPORTANT:** To grant the permission, add the following code snippets to
+    `/etc/dbus-1/system.d/ofono.conf` (before `</busconfig>`):
 
     ```xml
     <policy user="pulse">
@@ -51,10 +52,10 @@ Ubuntu 20.04.
     </policy>
     ```
 
-3. Provide phonesim to ofono. In order to make ofono work, you have to provide a modem to it!
-4. You can install a modem emulator called phonesim (implemented by ofono) to make it work:
+3. In order to make ofono work, you have to provide a modem to it!
+   You can install a modem emulator called `phonesim` (implemented by `ofono`) to make it work:
 
-    install ofono-phonesim:
+    install `ofono-phonesim`:
 
     ```bash
     sudo add-apt-repository ppa:smoser/bluetooth
@@ -62,7 +63,7 @@ Ubuntu 20.04.
     sudo apt-get install ofono-phonesim
     ```
 
-    Configure phonesim by adding the following lines to `/etc/ofono/phonesim.conf`:
+    Configure `phonesim` by adding the following lines to `/etc/ofono/phonesim.conf`:
 
     ```
     [phonesim]
@@ -71,13 +72,13 @@ Ubuntu 20.04.
     Port=12345
     ```
 
-    Restart `ofono`:
+    Now, restart `ofono` service as:
 
     ```bash
     sudo systemctl restart ofono.service
     ```
 
-    Now you will need to define and enable few services to start the ofono-phonesim.
+    Now you will need to define and enable few services to start the `ofono-phonesim` as service.
 
     To run `ofono-phonesim -p 12345 /usr/share/phonesim/default.xml` on startup as a systemd unit,
     create the file `/etc/systemd/system/ofono-phonesim.service`(as root) with the following
